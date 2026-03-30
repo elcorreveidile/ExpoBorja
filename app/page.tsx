@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const obras = [
-  { slug: "republica", titulo: "República", imagen: "/obras/republica.jpg", tecnica: "sobre tabla" },
-  { slug: "multitud", titulo: "La Multitud", imagen: "/obras/multitud.jpg", tecnica: "sobre tabla" },
-  { slug: "monjas", titulo: "Monjas", imagen: "/obras/monjas.jpg", tecnica: "sobre cartón" },
+  { slug: "puente",    titulo: "El Puente",       imagen: "/obras/puente.jpg",    tecnica: "sobre lienzo" },
+  { slug: "justicia",  titulo: "Justicia Social", imagen: "/obras/justicia.jpg",  tecnica: "sobre lienzo" },
+  { slug: "arlequin",  titulo: "El Arlequín",     imagen: "/obras/arlequin.jpg",  tecnica: "sobre lienzo" },
 ];
 
 export default function Home() {

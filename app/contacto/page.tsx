@@ -9,10 +9,20 @@ export default function Contacto() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Con Formspree o similar — aquí el email destino
-    const res = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+    const res = await fetch("https://formsubmit.co/ajax/informa@blablaele.com", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        nombre: form.nombre,
+        email: form.email,
+        asunto: form.asunto,
+        mensaje: form.mensaje,
+        _subject: `Web Borja Satrústegui — ${form.asunto}`,
+        _captcha: "false",
+      }),
     });
     if (res.ok) setEnviado(true);
   };

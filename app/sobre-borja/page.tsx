@@ -111,6 +111,69 @@ export default function SobreBorja() {
           </Link>
         </div>
       </div>
+
+      {/* SECCIÓN REINA SOFÍA */}
+      <div className="max-w-5xl mx-auto mt-20">
+        <div className="text-center mb-10">
+          <p className="text-xs tracking-[0.3em] text-[#c8962a] uppercase mb-3">Colección permanente</p>
+          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-3xl text-[#ede4d2]">
+            Museo Nacional Centro de Arte Reina Sofía
+          </h2>
+          <p className="text-sm text-[#9e8e78] mt-2">Madrid, 1958–2018</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start bg-[#1a150d] border border-[#2e2416] p-8 md:p-10">
+          {/* Imagen de la obra */}
+          <div>
+            <div className="relative aspect-[4/3] overflow-hidden border border-[#2e2416]">
+              <Image
+                src="/obras/vaqueria.jpg"
+                alt="Tableros del bar La Vaquería de la calle Libertad — Borja Satrústegui"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Ficha y texto */}
+          <div className="flex flex-col gap-5">
+            <div>
+              <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-xl italic text-[#ede4d2] mb-1">
+                Tableros del bar La Vaquería<br />de la calle Libertad
+              </h3>
+              <p className="text-xs tracking-widest text-[#c8962a] uppercase mb-3">1976</p>
+              <p className="text-xs text-[#6a5e50] leading-relaxed mb-1">
+                Acrílico, tinta negra a rotulador, lápiz y lápiz de color sobre aglomerado
+              </p>
+              <p className="text-xs text-[#6a5e50] leading-relaxed">
+                Donación de Fundación CEDCS (Centro Europeo para la Difusión de las Ciencias Sociales), 2022
+              </p>
+            </div>
+
+            <div className="w-full h-px bg-[#2e2416]" />
+
+            <p className="text-sm text-[#9e8e78] leading-relaxed">
+              La Vaquería, ubicada en la calle Libertad de Madrid, fue un bar frecuentado por la bohemia contracultural que ofrecía, tal como anunciaba su entrada, «pintura, música, poesía, güisqui y bocadillos». En la madrugada del 8 de junio de 1976 sufrió un atentado con bomba perpetrado por el grupo fascista Guerrilleros de Cristo Rey, que dejó parcialmente destruido el local.
+            </p>
+            <p className="text-sm text-[#9e8e78] leading-relaxed">
+              En respuesta, Cesepe y Borja Satrústegui realizaron unos nuevos paneles de aglomerado pintados para proteger las puertas, creando un lenguaje cercano al informalismo central. Meses después, estos mismos paneles fueron nuevamente atacados por los Guerrilleros con disparos de arma de fuego, cuyos impactos aún son visibles.
+            </p>
+            <p className="text-sm text-[#9e8e78] leading-relaxed">
+              La obra desbordó los espacios institucionales para habitar bares, portadas de discos, películas y revistas, convirtiéndose en un símbolo de la <em>Movida</em> madrileña.
+            </p>
+
+            <a
+              href="https://www.museoreinasofia.es/colecciones/artista/satrustegui-borja"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-xs tracking-[0.2em] uppercase text-[#c8962a] border border-[#c8962a]/40 px-4 py-2 hover:bg-[#c8962a] hover:text-[#0c0b09] transition-all duration-300 text-center"
+            >
+              Ver en el Reina Sofía →
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
