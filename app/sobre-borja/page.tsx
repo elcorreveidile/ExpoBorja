@@ -68,7 +68,7 @@ export default function SobreBorja() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
             <div className="relative">
               <div className="relative aspect-[3/4] overflow-hidden border border-[#2e2416]">
                 <Image
@@ -84,6 +84,16 @@ export default function SobreBorja() {
                 <Image
                   src="/borja-foto-2.jpg"
                   alt="Borja Satrústegui sonriendo en la galería"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+            </div>
+            <div className="relative">
+              <div className="relative aspect-[3/4] overflow-hidden border border-[#2e2416]">
+                <Image
+                  src="/borja-foto-3.png"
+                  alt="Borja Satrústegui con su obra"
                   fill
                   className="object-cover object-center"
                 />
