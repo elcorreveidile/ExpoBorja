@@ -140,18 +140,6 @@ export default function Tienda() {
         </div>
       </section>
 
-      {/* Láminas */}
-      <section>
-        <div className="flex items-center gap-6 mb-8">
-          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-2xl text-[#ede4d2]">Láminas</h2>
-          <div className="flex-1 h-px bg-[#2e2416]" />
-          <span className="text-xs tracking-[0.2em] text-[#9e8e78] uppercase">Firmadas y numeradas</span>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-          {laminas.map((lamina) => <LaminaCard key={lamina.id} lamina={lamina} />)}
-        </div>
-      </section>
-
       {/* Info envío */}
       <div className="mt-16 border border-[#2e2416] p-8 bg-[#1a150d]">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
