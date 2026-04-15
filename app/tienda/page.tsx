@@ -47,8 +47,8 @@ const laminas = originales.map((o) => ({
 function ProductoOriginal({ obra }: { obra: (typeof originales)[0] }) {
   return (
     <div className="group bg-[#1a150d] border border-[#2e2416] overflow-hidden hover:border-[#c8962a]/40 transition-colors duration-300">
-      <div className="relative aspect-square overflow-hidden">
-        <Image src={obra.imagen} alt={obra.titulo} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+      <div className="relative aspect-[3/4] overflow-hidden bg-[#0c0b09]">
+        <Image src={obra.imagen} alt={obra.titulo} fill className="object-contain transition-transform duration-700 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a150d]/70 to-transparent" />
         <div className="absolute top-2 left-2">
           <span className="bg-[#c8962a] text-[#0c0b09] text-[8px] tracking-[0.1em] uppercase px-1.5 py-0.5 font-semibold">
@@ -92,8 +92,8 @@ function LaminaCard({ lamina }: { lamina: (typeof laminas)[0] }) {
 
   return (
     <div className="group bg-[#1a150d] border border-[#2e2416] overflow-hidden hover:border-[#c8962a]/40 transition-colors duration-300">
-      <div className="relative aspect-square overflow-hidden">
-        <Image src={lamina.imagen} alt={lamina.titulo} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+      <div className="relative aspect-[3/4] overflow-hidden bg-[#0c0b09]">
+        <Image src={lamina.imagen} alt={lamina.titulo} fill className="object-contain transition-transform duration-700 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a150d]/70 to-transparent" />
         <div className="absolute top-2 left-2">
           <span className="bg-[#2e2416] border border-[#c8962a]/30 text-[#c8962a] text-[8px] tracking-[0.1em] uppercase px-1.5 py-0.5">Lámina</span>
