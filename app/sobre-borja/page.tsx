@@ -59,6 +59,39 @@ export default function SobreBorja() {
           </div>
         </div>
 
+        {/* FOTOS DEL ARTISTA */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <p className="text-xs tracking-[0.3em] text-[#c8962a] uppercase mb-3">El artista</p>
+            <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-2xl text-[#ede4d2]">
+              Borja Satrústegui en su estudio
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="relative">
+              <div className="relative aspect-[4/3] overflow-hidden border border-[#2e2416]">
+                <Image
+                  src="/borja-foto-1.jpg"
+                  alt="Borja Satrústegui en su estudio del Albayzín"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            <div className="relative">
+              <div className="relative aspect-[4/3] overflow-hidden border border-[#2e2416]">
+                <Image
+                  src="/borja-foto-2.jpg"
+                  alt="Borja Satrústegui trabajando en su obra"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Estilo */}
         <div className="bg-[#1a150d] border border-[#2e2416] p-8 md:p-12 mb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
