@@ -28,7 +28,7 @@ export default function Contacto() {
   };
 
   return (
-    <div className="pt-24 pb-20 px-6 max-w-4xl mx-auto">
+    <div className="pt-32 pb-20 px-6 max-w-4xl mx-auto">
       {/* Encabezado */}
       <div className="text-center mb-16">
         <p className="text-xs tracking-[0.4em] text-[#c8962a] uppercase mb-4">Escríbenos</p>
@@ -41,6 +41,8 @@ export default function Contacto() {
         <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#c8962a] to-transparent mx-auto mb-6" />
         <p className="text-[#9e8e78] max-w-xl mx-auto text-sm leading-relaxed">
           Para consultas sobre obras originales, láminas, precios o cualquier otra cuestión, escríbenos directamente.
+          <br /><br />
+          <span className="text-[#c8962a]">¿Tienes un cuadro de Borja Satrústegui?</span> Seleccione "Tengo un cuadro de Borja" en el formulario y envíanos una foto.
         </p>
       </div>
 
@@ -128,6 +130,7 @@ export default function Contacto() {
                   className="w-full bg-[#1a150d] border border-[#2e2416] text-[#ede4d2] px-4 py-3 text-sm focus:outline-none focus:border-[#c8962a] transition-colors"
                 >
                   <option value="info">Información general</option>
+                  <option value="cuadro">🎨 Tengo un cuadro de Borja (enviar foto)</option>
                   <option value="original">Consulta sobre obra original</option>
                   <option value="lamina">Pedido de lámina</option>
                   <option value="expo">Sobre la exposición</option>
@@ -145,7 +148,7 @@ export default function Contacto() {
                   value={form.mensaje}
                   onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
                   className="w-full bg-[#1a150d] border border-[#2e2416] text-[#ede4d2] px-4 py-3 text-sm focus:outline-none focus:border-[#c8962a] transition-colors resize-none"
-                  placeholder="¿En qué podemos ayudarte?"
+                  placeholder={form.asunto === "cuadro" ? "Cuéntanos sobre tu cuadro: ¿dónde lo adquiriste? ¿qué medidas tiene? Podrás adjuntar la foto después de enviar este mensaje." : "¿En qué podemos ayudarte?"}
                 />
               </div>
 

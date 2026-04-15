@@ -215,6 +215,46 @@ export default function SobreBorja() {
         </div>
       </div>
 
+      {/* LLAMAMIENTO - BUSCAMOS SUS OBRAS */}
+      <div className="max-w-5xl mx-auto mt-20">
+        <div className="bg-gradient-to-br from-[#c8962a]/10 to-transparent border-2 border-[#c8962a]/30 p-8 md:p-12 text-center">
+          <div className="w-16 h-16 rounded-full bg-[#c8962a]/20 flex items-center justify-center mx-auto mb-6">
+            <span className="text-3xl">🔍</span>
+          </div>
+
+          <p className="text-xs tracking-[0.3em] text-[#c8962a] uppercase mb-4">Ayúdanos a documentar su obra</p>
+
+          <h2
+            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            className="text-2xl md:text-3xl text-[#ede4d2] mb-6"
+          >
+            ¿Tienes un cuadro de Borja Satrústegui?
+          </h2>
+
+          <p className="text-sm text-[#9e8e78] leading-relaxed mb-8 max-w-2xl mx-auto">
+            La obra de Borja Satrústegui está muy dispersa y no sabemos dónde pueden estar todos sus originales.
+            Si tienes algún cuadro suyo, nos gustaría muchísimo que nos enviaras una foto. Ayúdanos a documentar
+            y preservar el legado artístico de este pintor granadino.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link
+              href="/contacto"
+              className="inline-block px-8 py-4 bg-[#c8962a] text-[#0c0b09] text-xs tracking-[0.2em] uppercase font-semibold hover:bg-[#e2b24a] transition-all duration-300"
+            >
+              Enviar foto del cuadro
+            </Link>
+            <span className="text-xs text-[#6a5e50]">
+              📸 Responde en menos de 48h
+            </span>
+          </div>
+
+          <p className="text-xs text-[#6a5e50] mt-6 italic">
+            "Hay que comprar a los artistas vivos, pues los muertos ya no necesitan dinero…"
+          </p>
+        </div>
+      </div>
+
     </div>
   );
 }
