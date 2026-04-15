@@ -5,8 +5,6 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Exposicion() {
-  const [videoActivo, setVideoActivo] = useState(false);
-
   return (
     <div className="pt-32 pb-8 md:pb-16">
       {/* Encabezado */}
@@ -75,34 +73,13 @@ export default function Exposicion() {
           </div>
 
           <div className="relative aspect-video overflow-hidden border border-[#2e2416] shadow-2xl bg-[#0c0b09]">
-            {videoActivo ? (
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/_ehRqUgG34c?autoplay=1&rel=0"
-                title="Borja Satrústegui — Pintor"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full"
-              />
-            ) : (
-              <button
-                onClick={() => setVideoActivo(true)}
-                className="absolute inset-0 w-full h-full flex flex-col items-center justify-center gap-4 group"
-                aria-label="Reproducir vídeo"
-              >
-                <Image
-                  src="/obras/tablao.jpg"
-                  alt="Ver vídeo de Borja Satrústegui"
-                  fill
-                  className="object-cover opacity-40 group-hover:opacity-50 transition-opacity"
-                />
-                <div className="relative z-10 flex flex-col items-center gap-3">
-                  <div className="w-16 h-16 rounded-full bg-[#c8962a] flex items-center justify-center group-hover:bg-[#e2b24a] transition-colors shadow-xl">
-                    <span className="text-[#0c0b09] text-2xl ml-1">▶</span>
-                  </div>
-                  <span className="text-xs tracking-[0.2em] uppercase text-[#ede4d2]">Ver vídeo</span>
-                </div>
-              </button>
-            )}
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/_ehRqUgG34c?rel=0"
+              title="Borja Satrústegui — Pintor"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
           </div>
 
           <div className="text-center mt-6">
