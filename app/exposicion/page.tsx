@@ -8,7 +8,7 @@ export default function Exposicion() {
   const [videoActivo, setVideoActivo] = useState(false);
 
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-32 pb-8 md:pb-16">
       {/* Encabezado */}
       <div className="text-center px-6 mb-16">
         <p className="text-xs tracking-[0.4em] text-[#c8962a] uppercase mb-4">2026</p>
