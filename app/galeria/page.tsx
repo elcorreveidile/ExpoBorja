@@ -35,6 +35,7 @@ const obras = [
   { slug: "arena",        titulo: "La Arena",     imagen: "/obras/arena.jpg",        tecnica: "Óleo sobre tabla",   descripcion: "Una multitud de cuerpos se agolpa en un espacio oval rosado. El rebaño, la masa, la soledad en el número." },
   { slug: "corredor",     titulo: "El Corredor",  imagen: "/obras/corredor.jpg",     tecnica: "Óleo sobre lienzo",  descripcion: "Figuras en bata forman una fila en un corredor institucional nocturno. La burocracia como jaula." },
   { slug: "primavera",    titulo: "La Primavera", imagen: "/obras/primavera.jpg",    tecnica: "Óleo sobre tabla",   descripcion: "Madres e hijos desnudos en un campo verde bajo cielo azul. La vida que florece sin permiso ni pudor." },
+  { slug: "pandemia",     titulo: "Pandemia",      imagen: "/obras/coleccion-particular.jpg", tecnica: "Óleo sobre tabla",   descripcion: "Colección particular. Obra que refleja la crisis sanitaria global desde la mirada única de Satrústegui." },
 ];
 
 export default function Galeria() {
@@ -46,7 +47,7 @@ export default function Galeria() {
   const next = () => setLightbox((i) => (i !== null ? (i + 1) % obras.length : 0));
 
   return (
-    <div className="pt-24 pb-20 px-6 max-w-7xl mx-auto">
+    <div className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
       {lightbox !== null && (
         <Lightbox
           imagen={obras[lightbox].imagen}

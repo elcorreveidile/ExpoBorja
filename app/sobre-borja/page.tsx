@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function SobreBorja() {
   return (
-    <div className="pt-24 pb-20 px-6">
+    <div className="pt-32 pb-20 px-6">
       {/* Encabezado */}
       <div className="text-center mb-16">
         <p className="text-xs tracking-[0.4em] text-[#c8962a] uppercase mb-4">Biografía</p>
@@ -170,6 +170,47 @@ export default function SobreBorja() {
             >
               Ver en el Reina Sofía →
             </a>
+          </div>
+        </div>
+      </div>
+
+      {/* SECCIÓN ARTÍCULO */}
+      <div className="max-w-5xl mx-auto mt-20">
+        <div className="text-center mb-10">
+          <p className="text-xs tracking-[0.3em] text-[#c8962a] uppercase mb-3">Prensa</p>
+          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-3xl text-[#ede4d2]">
+            La pintura contemporánea en Granada
+          </h2>
+          <p className="text-sm text-[#9e8e78] mt-2">De Borja Satrústegui a Paula Cervilla</p>
+          <p className="text-xs text-[#6a5e50] mt-1">Por Luis Pablo Núñez | Publicada viernes, 8 de abril de 2022</p>
+        </div>
+
+        <div className="bg-[#1a150d] border border-[#2e2416] p-8 md:p-10">
+          <div className="relative aspect-[3/2] overflow-hidden border border-[#2e2416] mb-8">
+            <Image
+              src="/articulo-granada.jpg"
+              alt="Artículo sobre pintura contemporánea en Granada"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="prose prose-invert max-w-none">
+            <p className="text-sm text-[#9e8e78] leading-relaxed mb-4">
+              Borja Satrústegui nació en San Sebastián en 1943: tiene la edad de mi padre y, a pesar del bastón, un porte recio (como que es del norte…). Estudió en la Escuela de Bellas Artes de San Fernando y en el Círculo de Bellas Artes de Madrid, pero optó por la vida bohemia, como pintor anarquista, republicano, viviendo durante unos meses en los campamentos de refugiados saharauis del Frente Polisario, otros en Orán, después en Portugalete y, durante otros años, en un velero, me dice, para llegar luego a su casa del Albaicín.
+            </p>
+            <p className="text-sm text-[#9e8e78] leading-relaxed mb-4">
+              La pintura es su modo de vida y no le importa estar lejos del circuito académico, aunque su obra merece estarlo. Granada cuenta con otros lugares para el desarrollo del arte: además de los centros de formación (la Facultad de Bellas Artes y la Escuela de Artes y Oficios), existe una Real Academia de Bellas Artes de Granada, creada en 1777 (recientemente se hizo una exposición con algunos de sus fondos, del 16/12/21 al 30/01/22, en la Sala de exposiciones del Centro Cultural Gran Capitán) y el Centro Artístico, Literario y Científico de Granada.
+            </p>
+            <p className="text-sm text-[#9e8e78] leading-relaxed mb-4">
+              El Centro José Guerrero, por su parte, realiza exposiciones temporales de pintura, fotografía y nuevos medios que se suman al legado del pintor que allí se conserva. El Centro Lorca (sin olvidarnos de su casa natal y de la Casa-Museo Huerta de San Vicente), del mismo modo, promueve la difusión del archivo con exposiciones. La Fundación CajaGranada cuenta con una colección artística interesante y exposiciones regulares relevantes, como la realizada hace poco sobre Mariano Fortuny y Madrazo, francamente interesante.
+            </p>
+            <p className="text-sm text-[#9e8e78] leading-relaxed mb-4">
+              La Universidad de Granada (UGR) es una de las grandes dinamizadoras de vida cultural en la ciudad: desde marzo a mayo de 2022 se pueden ver obras de primer nivel para la exposición «Zuloaga, entre lo gitano y el flamenco» y, desde abril, la exposición con obras de Manuel Ángeles Ortiz sobre el Albaicín: Obsesión (con su serie «Albaicines») en el Palacio del Almirante.
+            </p>
+            <p className="text-sm text-[#9e8e78] leading-relaxed">
+              Basten estos ejemplos para mostrar que Granada es más que la Alhambra y el arte hispanomusulmán, reconocido con justicia. También debe promoverse el arte actual: a fin de cuentas, el arte de este siglo no puede sino reflejar las circunstancias que estamos viviendo y, como decía una publicidad de una de las exposiciones arriba indicadas, hay que comprar a los artistas vivos, pues los muertos ya no necesitan dinero…
+            </p>
           </div>
         </div>
       </div>
