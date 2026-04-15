@@ -72,13 +72,15 @@ export default function Exposicion() {
             </h2>
           </div>
 
-          <div className="relative aspect-video overflow-hidden border border-[#2e2416] shadow-2xl bg-[#0c0b09]">
+          <div className="relative w-full aspect-video overflow-hidden border border-[#2e2416] shadow-2xl bg-[#0c0b09]">
             <iframe
               src="https://www.youtube.com/embed/_ehRqUgG34c?rel=0&modestbranding=1"
               title="Borja Satrústegui — Pintor"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
-              className="absolute inset-0 w-full h-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="absolute inset-0 w-full h-full border-0"
             />
           </div>
 
