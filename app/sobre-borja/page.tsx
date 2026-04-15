@@ -68,7 +68,7 @@ export default function SobreBorja() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-2xl mx-auto">
             <div className="relative">
               <div className="relative aspect-[3/4] overflow-hidden border border-[#2e2416]">
                 <Image
