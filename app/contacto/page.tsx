@@ -4,25 +4,28 @@ import { useState } from "react";
 
 export default function Contacto() {
   const [enviado, setEnviado] = useState(false);
-  const [form, setForm] = useState({ nombre: "", email: "", asunto: "info", mensaje: "" });
+  const [form, setForm] = useState({ nombre: "", email: "", asunto: "info", mensaje: "", archivo: null as File | null });
+  const [archivoNombre, setArchivoNombre] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Con Formspree o similar — aquí el email destino
+
+    // Crear FormData para enviar archivos
+    const formData = new FormData();
+    formData.append("nombre", form.nombre);
+    formData.append("email", form.email);
+    formData.append("asunto", form.asunto);
+    formData.append("mensaje", form.mensaje);
+    formData.append("_subject", `Web Borja Satrústegui — ${form.asunto}`);
+    formData.append("_captcha", "false");
+
+    if (form.archivo) {
+      formData.append("archivo", form.archivo);
+    }
+
     const res = await fetch("https://formsubmit.co/ajax/informa@blablaele.com", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        nombre: form.nombre,
-        email: form.email,
-        asunto: form.asunto,
-        mensaje: form.mensaje,
-        _subject: `Web Borja Satrústegui — ${form.asunto}`,
-        _captcha: "false",
-      }),
+      body: formData,
     });
     if (res.ok) setEnviado(true);
   };
@@ -151,6 +154,41 @@ export default function Contacto() {
                   placeholder={form.asunto === "cuadro" ? "Cuéntanos sobre tu cuadro: ¿dónde lo adquiriste? ¿qué medidas tiene? Podrás adjuntar la foto después de enviar este mensaje." : "¿En qué podemos ayudarte?"}
                 />
               </div>
+
+              {form.asunto === "cuadro" && (
+                <div>
+                  <label className="block text-xs tracking-[0.15em] uppercase text-[#9e8e78] mb-2">
+                    Foto del cuadro (opcional)
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={(e) => {
+                        const file = e.target.files?.[0];
+                        if (file) {
+                          setForm({ ...form, archivo: file });
+                          setArchivoNombre(file.name);
+                        }
+                      }}
+                      className="hidden"
+                      id="archivo-input"
+                    />
+                    <label
+                      htmlFor="archivo-input"
+                      className="flex items-center justify-center gap-3 w-full bg-[#1a150d] border border-[#2e2416] text-[#9e8e78] px-4 py-6 text-sm focus:outline-none focus:border-[#c8962a] transition-colors cursor-pointer hover:border-[#c8962a]/40"
+                    >
+                      <span className="text-2xl">📷</span>
+                      <span className="text-center">
+                        {archivoNombre ? archivoNombre : "Haz clic o arrastra para subir la foto del cuadro"}
+                      </span>
+                    </label>
+                  </div>
+                  <p className="text-xs text-[#6a5e50] mt-2">
+                    Formatos aceptados: JPG, PNG, WEBP. Máximo 10MB.
+                  </p>
+                </div>
+              )}
 
               <button
                 type="submit"

@@ -50,18 +50,17 @@ function ProductoOriginal({ obra }: { obra: (typeof originales)[0] }) {
       <div className="relative aspect-square overflow-hidden">
         <Image src={obra.imagen} alt={obra.titulo} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a150d]/70 to-transparent" />
-        <div className="absolute top-3 left-3">
-          <span className="bg-[#c8962a] text-[#0c0b09] text-[10px] tracking-[0.15em] uppercase px-2 py-1 font-semibold">
-            Original único
+        <div className="absolute top-2 left-2">
+          <span className="bg-[#c8962a] text-[#0c0b09] text-[8px] tracking-[0.1em] uppercase px-1.5 py-0.5 font-semibold">
+            Original
           </span>
         </div>
       </div>
-      <div className="p-5">
-        <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-base italic text-[#ede4d2] mb-1">{obra.titulo}</h3>
-        <p className="text-xs text-[#c8962a] tracking-widest uppercase mb-3">{obra.tecnica}</p>
-        <p className="text-xs text-[#9e8e78] leading-relaxed mb-4">{obra.descripcion}</p>
-        <Link href="/contacto" className="block text-center text-xs tracking-[0.15em] uppercase border border-[#c8962a] text-[#c8962a] px-4 py-2.5 hover:bg-[#c8962a] hover:text-[#0c0b09] transition-all duration-300">
-          Consultar precio
+      <div className="p-3">
+        <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-xs italic text-[#ede4d2] mb-1 truncate">{obra.titulo}</h3>
+        <p className="text-[10px] text-[#c8962a] tracking-wider uppercase mb-2 truncate">{obra.tecnica}</p>
+        <Link href="/contacto" className="block text-center text-[10px] tracking-[0.1em] uppercase border border-[#c8962a] text-[#c8962a] px-2 py-1.5 hover:bg-[#c8962a] hover:text-[#0c0b09] transition-all duration-300">
+          Consultar
         </Link>
       </div>
     </div>
@@ -96,21 +95,20 @@ function LaminaCard({ lamina }: { lamina: (typeof laminas)[0] }) {
       <div className="relative aspect-square overflow-hidden">
         <Image src={lamina.imagen} alt={lamina.titulo} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a150d]/70 to-transparent" />
-        <div className="absolute top-3 left-3">
-          <span className="bg-[#2e2416] border border-[#c8962a]/30 text-[#c8962a] text-[10px] tracking-[0.15em] uppercase px-2 py-1">Lámina</span>
+        <div className="absolute top-2 left-2">
+          <span className="bg-[#2e2416] border border-[#c8962a]/30 text-[#c8962a] text-[8px] tracking-[0.1em] uppercase px-1.5 py-0.5">Lámina</span>
         </div>
       </div>
-      <div className="p-5">
-        <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-base italic text-[#ede4d2] mb-1">{lamina.titulo}</h3>
-        <p className="text-xs text-[#9e8e78] leading-relaxed mb-3">{lamina.formato}</p>
-        <div className="flex items-center justify-between gap-3">
-          <span style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-xl text-[#c8962a]">{lamina.precio} €</span>
+      <div className="p-3">
+        <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-xs italic text-[#ede4d2] mb-1 truncate">{lamina.titulo}</h3>
+        <div className="flex items-center justify-between gap-2 mb-2">
+          <span style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-sm text-[#c8962a]">{lamina.precio} €</span>
           <button
             onClick={handleCompra}
             disabled={loading}
-            className="flex-1 text-xs tracking-[0.15em] uppercase bg-[#c8962a] text-[#0c0b09] px-4 py-2.5 font-semibold hover:bg-[#e2b24a] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-1 text-[10px] tracking-[0.1em] uppercase bg-[#c8962a] text-[#0c0b09] px-2 py-1 font-semibold hover:bg-[#e2b24a] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? "Procesando..." : "Comprar"}
+            {loading ? "..." : "Comprar"}
           </button>
         </div>
       </div>
@@ -120,7 +118,7 @@ function LaminaCard({ lamina }: { lamina: (typeof laminas)[0] }) {
 
 export default function Tienda() {
   return (
-    <div className="pt-24 pb-20 px-6 max-w-7xl mx-auto">
+    <div className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
       <div className="text-center mb-16">
         <p className="text-xs tracking-[0.4em] text-[#c8962a] uppercase mb-4">Arte original</p>
         <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-4xl md:text-5xl text-[#ede4d2] font-normal mb-4">Tienda</h1>
@@ -137,7 +135,7 @@ export default function Tienda() {
           <div className="flex-1 h-px bg-[#2e2416]" />
           <span className="text-xs tracking-[0.2em] text-[#9e8e78] uppercase">Piezas únicas</span>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
           {originales.map((obra) => <ProductoOriginal key={obra.id} obra={obra} />)}
         </div>
       </section>
@@ -149,7 +147,7 @@ export default function Tienda() {
           <div className="flex-1 h-px bg-[#2e2416]" />
           <span className="text-xs tracking-[0.2em] text-[#9e8e78] uppercase">Firmadas y numeradas</span>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
           {laminas.map((lamina) => <LaminaCard key={lamina.id} lamina={lamina} />)}
         </div>
       </section>
