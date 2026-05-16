@@ -6,45 +6,43 @@ import { useState } from "react";
 import Lightbox from "@/components/Lightbox";
 
 const obras = [
-  { slug: "reflejos",  titulo: "I. Las Bañistas",                 imagen: "/obras/reflejos.jpg",  tecnica: "Óleo sobre lienzo",  descripcion: "Figuras femeninas y sus reflejos invertidos en el agua. Composición serena que dialoga con la tradición clásica del desnudo.", destacada: true },
-  { slug: "justicia",  titulo: "II. Justicia Social",              imagen: "/obras/justicia.jpg",  tecnica: "Óleo sobre lienzo",  descripcion: "Marea humana de puños alzados. El marco mismo se convierte en soporte del texto: palabras que son grito.", destacada: true },
-  { slug: "planideras",titulo: "III. Las Plañideras",               imagen: "/obras/planideras.jpg",tecnica: "Óleo sobre lienzo",  descripcion: "Figuras envueltas en oro y blanco, tendidas en larga procesión. Duelo colectivo de resonancias antiguas.", destacada: true },
-  { slug: "puente",    titulo: "IV. El Puente",                    imagen: "/obras/puente.jpg",    tecnica: "Óleo sobre lienzo",  descripcion: "Una familia avanza entre la multitud sobre un puente nocturno. El éxodo contemporáneo, la soledad en la marea.", destacada: true },
-  { slug: "republica", titulo: "V. República",                    imagen: "/obras/republica.jpg", tecnica: "Óleo sobre tabla",   descripcion: "Una figura femenina alza la palabra República sobre una masa de cráneos. Alegoría de la memoria histórica." },
-  { slug: "camino",    titulo: "VI. El Camino",                    imagen: "/obras/camino.jpg",    tecnica: "Óleo sobre lienzo",  descripcion: "Dos filas de figuras en blanco convergen hacia una esfera dorada alada. Imagen de búsqueda y trascendencia." },
-  { slug: "arquero",   titulo: "VII. El Arquero",                   imagen: "/obras/arquero.jpg",   tecnica: "Óleo sobre lienzo",  descripcion: "Un arquero desnudo apunta a una multitud flanqueada por un esqueleto. Danza de la muerte de raíz medieval." },
-  { slug: "manos",     titulo: "VIII. Las Manos",                    imagen: "/obras/manos.jpg",     tecnica: "Óleo sobre lienzo",  descripcion: "Un bosque de brazos y manos con texto superpuesto. La escritura y el cuerpo como materia inseparable." },
-  { slug: "arlequin",  titulo: "IX. El Arlequín",                  imagen: "/obras/arlequin.jpg",  tecnica: "Óleo sobre lienzo",  descripcion: "Un arlequín y una figura desnuda juegan a las cartas sobre fondos rojos. Guiño a Picasso, tensión y complicidad." },
-  { slug: "tablao",    titulo: "X. El Tablao",                    imagen: "/obras/tablao.jpg",    tecnica: "Óleo sobre lienzo",  descripcion: "Escena de flamenco: brazos, cuerpos y guitarras en la calidez de un tablao granadino." },
-  { slug: "multitud",  titulo: "XI. La Multitud",                  imagen: "/obras/multitud.jpg",  tecnica: "Óleo sobre tabla",   descripcion: "Una muchedumbre densa ante la figura de la muerte. Lo cotidiano y lo existencial en un espacio expresionista." },
-  { slug: "encuentro", titulo: "XII. El Encuentro",                 imagen: "/obras/encuentro.jpg", tecnica: "Óleo sobre tabla",   descripcion: "Dos rostros en tensión expresionista. Trazo libre y colores de gran intensidad." },
-  { slug: "flores",    titulo: "XIII. Adelfas",                      imagen: "/obras/flores.jpg",    tecnica: "Óleo sobre lienzo",  descripcion: "Flores amarillas sobre azul violeta. Rareza botánica en la obra de Satrústegui: belleza sin más pretensión." },
-  { slug: "alhambra",  titulo: "XIV. Conversación en el Albayzín",  imagen: "/obras/alhambra.jpg",  tecnica: "Óleo sobre tabla",   descripcion: "Dos figuras moriscas conversan frente a la Alhambra. Diálogo de culturas con el monumento nazarí como testigo." },
-  { slug: "panadero",  titulo: "XV. El Panadero",                  imagen: "/obras/panadero.jpg",  tecnica: "Óleo sobre lienzo",  descripcion: "La calma del trabajo cotidiano: un panadero amasa en una cocina de suelo a cuadros. Costumbrismo con dignidad." },
-  { slug: "madre",     titulo: "XVI. La Madre",                     imagen: "/obras/madre.jpg",     tecnica: "Pastel sobre papel", descripcion: "Dos figuras sostienen un bebé entre campos dorados. Ternura y simbolismo de fuerza primitiva." },
-  { slug: "procesion", titulo: "XVII. La Procesión",                 imagen: "/obras/procesion.jpg", tecnica: "Óleo sobre tabla",   descripcion: "Una escena dentro de un cuadro. Figuras enmarcadas por rostros que observan desde los bordes del lienzo." },
-  { slug: "monjas",    titulo: "XVIII. Monjas",                       imagen: "/obras/monjas.jpg",    tecnica: "Óleo sobre cartón",  descripcion: "Religiosas y figuras desnudas habitan mundos paralelos separados por un umbral." },
-  { slug: "espejo",    titulo: "XIX. El Espejo",                    imagen: "/obras/espejo.jpg",    tecnica: "Óleo sobre cartón",  descripcion: "Una mujer de amarillo y su reflejo en un espacio surreal. La identidad y el doble en tonos verdes y ocres." },
-  { slug: "calle",        titulo: "XX. Calle",               imagen: "/obras/calle.jpg",          tecnica: "Óleo sobre cartón",  descripcion: "Dos figuras avanzan por una calle de tonos azules y cálidos. El tiempo detenido de la vida ordinaria." },
-  { slug: "poder",        titulo: "XXI. El Poder",            imagen: "/obras/poder.jpg",          tecnica: "Óleo sobre tabla",   descripcion: "Una mano gigante desciende sobre una masa de humanidad. Símbolo crudo del dominio y la pequeñez." },
-  { slug: "cabinas",      titulo: "XXII. Las Cabinas",         imagen: "/obras/cabinas.jpg",        tecnica: "Óleo sobre cartón",  descripcion: "Figuras atrapadas en cabinas transparentes, un pájaro en el suelo. El absurdo kafkiano hecho pintura." },
-  { slug: "medicos",      titulo: "XXIII. Los Médicos",         imagen: "/obras/medicos.jpg",        tecnica: "Óleo sobre lienzo",  descripcion: "Tres figuras con bata blanca ante una mesa con especímenes. La ciencia y sus rituales en clave de misterio." },
-  { slug: "exodus",       titulo: "XXIV. El Éxodo",            imagen: "/obras/exodus.jpg",         tecnica: "Óleo sobre tabla",   descripcion: "Dos manos blancas y enormes flanquean una multitud en marcha con un niño. La huida, lo sagrado, el miedo." },
-  { slug: "pensamiendia", titulo: "XXV. Pensamendía",  imagen: "/obras/pensamiendia.jpg", tecnica: "Óleo sobre lienzo",  descripcion: "Dos hileras de figuras coronadas de flores se miran sobre fondo dorado. El pensamiento como diálogo infinito." },
-  { slug: "umbral",       titulo: "XXVI. El Umbral",    imagen: "/obras/umbral.jpg",       tecnica: "Óleo sobre lienzo",  descripcion: "Una figura desnuda se abraza a un pilar oscuro mirando al cielo. El gesto de quien está en el límite entre dos mundos." },
-  { slug: "arena",        titulo: "XXVII. La Arena",     imagen: "/obras/arena.jpg",        tecnica: "Óleo sobre tabla",   descripcion: "Una multitud de cuerpos se agolpa en un espacio oval rosado. El rebaño, la masa, la soledad en el número." },
-  { slug: "corredor",     titulo: "XXVIII. El Corredor",  imagen: "/obras/corredor.jpg",     tecnica: "Óleo sobre lienzo",  descripcion: "Figuras en bata forman una fila en un corredor institucional nocturno. La burocracia como jaula." },
-  { slug: "primavera",    titulo: "XXIX. La Primavera", imagen: "/obras/primavera.jpg",    tecnica: "Óleo sobre tabla",   descripcion: "Madres e hijos desnudos en un campo verde bajo cielo azul. La vida que florece sin permiso ni pudor." },
-  { slug: "pandemia",     titulo: "XXX. Pandemia",      imagen: "/obras/coleccion-particular.jpg", tecnica: "Óleo sobre tabla",   descripcion: "Colección particular. Obra que refleja la crisis sanitaria global desde la mirada única de Satrústegui." },
-  { slug: "maternidad",   titulo: "XXXI. Maternidad",    imagen: "/obras/maternidad.jpg",           tecnica: "Óleo sobre lienzo",  descripcion: "La fuerza primigenia de la maternidad. Figura femenina que sostiene la vida con gesto protector y mirada serena." },
-  { slug: "retrato1",     titulo: "XXXII. Retrato I",     imagen: "/obras/retrato1.jpg",             tecnica: "Óleo sobre tabla",   descripcion: "Rostro humano capturado con la intensidad expresionista característica del autor. Mirada que interpela al espectador." },
-  { slug: "retrato2",     titulo: "XXXIII. Retrato II",    imagen: "/obras/retrato2.jpg",             tecnica: "Óleo sobre tabla",   descripcion: "Segunda aproximación al género del retrato. El rostro como territorio de emociones y narrativas silenciosas." },
+  { slug: "reflejos",  titulo: "I",   imagen: "/obras/reflejos.jpg",  tecnica: "Óleo sobre lienzo",  descripcion: "Figuras femeninas y sus reflejos invertidos en el agua. Composición serena que dialoga con la tradición clásica del desnudo." },
+  { slug: "justicia",  titulo: "II",  imagen: "/obras/justicia.jpg",  tecnica: "Óleo sobre lienzo",  descripcion: "Marea humana de puños alzados. El marco mismo se convierte en soporte del texto: palabras que son grito." },
+  { slug: "planideras",titulo: "III", imagen: "/obras/planideras.jpg",tecnica: "Óleo sobre lienzo",  descripcion: "Figuras envueltas en oro y blanco, tendidas en larga procesión. Duelo colectivo de resonancias antiguas." },
+  { slug: "puente",    titulo: "IV",  imagen: "/obras/puente.jpg",    tecnica: "Óleo sobre lienzo",  descripcion: "Una familia avanza entre la multitud sobre un puente nocturno. El éxodo contemporáneo, la soledad en la marea." },
+  { slug: "republica", titulo: "V",   imagen: "/obras/republica.jpg", tecnica: "Óleo sobre tabla",   descripcion: "Una figura femenina alza la palabra República sobre una masa de cráneos. Alegoría de la memoria histórica." },
+  { slug: "camino",    titulo: "VI",  imagen: "/obras/camino.jpg",    tecnica: "Óleo sobre lienzo",  descripcion: "Dos filas de figuras en blanco convergen hacia una esfera dorada alada. Imagen de búsqueda y trascendencia." },
+  { slug: "arquero",   titulo: "VII", imagen: "/obras/arquero.jpg",   tecnica: "Óleo sobre lienzo",  descripcion: "Un arquero desnudo apunta a una multitud flanqueada por un esqueleto. Danza de la muerte de raíz medieval." },
+  { slug: "manos",     titulo: "VIII",imagen: "/obras/manos.jpg",     tecnica: "Óleo sobre lienzo",  descripcion: "Un bosque de brazos y manos con texto superpuesto. La escritura y el cuerpo como materia inseparable." },
+  { slug: "arlequin",  titulo: "IX",  imagen: "/obras/arlequin.jpg",  tecnica: "Óleo sobre lienzo",  descripcion: "Un arlequín y una figura desnuda juegan a las cartas sobre fondos rojos. Guiño a Picasso, tensión y complicidad." },
+  { slug: "tablao",    titulo: "X",   imagen: "/obras/tablao.jpg",    tecnica: "Óleo sobre lienzo",  descripcion: "Escena de flamenco: brazos, cuerpos y guitarras en la calidez de un tablao granadino." },
+  { slug: "multitud",  titulo: "XI",  imagen: "/obras/multitud.jpg",  tecnica: "Óleo sobre tabla",   descripcion: "Una muchedumbre densa ante la figura de la muerte. Lo cotidiano y lo existencial en un espacio expresionista." },
+  { slug: "encuentro", titulo: "XII", imagen: "/obras/encuentro.jpg", tecnica: "Óleo sobre tabla",   descripcion: "Dos rostros en tensión expresionista. Trazo libre y colores de gran intensidad." },
+  { slug: "flores",    titulo: "XIII",imagen: "/obras/flores.jpg",    tecnica: "Óleo sobre lienzo",  descripcion: "Flores amarillas sobre azul violeta. Rareza botánica en la obra de Satrústegui: belleza sin más pretensión." },
+  { slug: "alhambra",  titulo: "XIV", imagen: "/obras/alhambra.jpg",  tecnica: "Óleo sobre tabla",   descripcion: "Dos figuras moriscas conversan frente a la Alhambra. Diálogo de culturas con el monumento nazarí como testigo." },
+  { slug: "panadero",  titulo: "XV",  imagen: "/obras/panadero.jpg",  tecnica: "Óleo sobre lienzo",  descripcion: "La calma del trabajo cotidiano: un panadero amasa en una cocina de suelo a cuadros. Costumbrismo con dignidad." },
+  { slug: "madre",     titulo: "XVI", imagen: "/obras/madre.jpg",     tecnica: "Pastel sobre papel", descripcion: "Dos figuras sostienen un bebé entre campos dorados. Ternura y simbolismo de fuerza primitiva." },
+  { slug: "procesion", titulo: "XVII",imagen: "/obras/procesion.jpg", tecnica: "Óleo sobre tabla",   descripcion: "Una escena dentro de un cuadro. Figuras enmarcadas por rostros que observan desde los bordes del lienzo." },
+  { slug: "monjas",    titulo: "XVIII",imagen: "/obras/monjas.jpg",    tecnica: "Óleo sobre cartón",  descripcion: "Religiosas y figuras desnudas habitan mundos paralelos separados por un umbral." },
+  { slug: "espejo",    titulo: "XIX", imagen: "/obras/espejo.jpg",    tecnica: "Óleo sobre cartón",  descripcion: "Una mujer de amarillo y su reflejo en un espacio surreal. La identidad y el doble en tonos verdes y ocres." },
+  { slug: "calle",     titulo: "XX",  imagen: "/obras/calle.jpg",      tecnica: "Óleo sobre cartón",  descripcion: "Dos figuras avanzan por una calle de tonos azules y cálidos. El tiempo detenido de la vida ordinaria." },
+  { slug: "poder",     titulo: "XXI", imagen: "/obras/poder.jpg",      tecnica: "Óleo sobre tabla",   descripcion: "Una mano gigante desciende sobre una masa de humanidad. Símbolo crudo del dominio y la pequeñez." },
+  { slug: "cabinas",   titulo: "XXII",imagen: "/obras/cabinas.jpg",    tecnica: "Óleo sobre cartón",  descripcion: "Figuras atrapadas en cabinas transparentes, un pájaro en el suelo. El absurdo kafkiano hecho pintura." },
+  { slug: "medicos",   titulo: "XXIII",imagen: "/obras/medicos.jpg",    tecnica: "Óleo sobre lienzo",  descripcion: "Tres figuras con bata blanca ante una mesa con especímenes. La ciencia y sus rituales en clave de misterio." },
+  { slug: "exodus",    titulo: "XXIV",imagen: "/obras/exodus.jpg",     tecnica: "Óleo sobre tabla",   descripcion: "Dos manos blancas y enormes flanquean una multitud en marcha con un niño. La huida, lo sagrado, el miedo." },
+  { slug: "pensamiendia",titulo: "XXV",imagen: "/obras/pensamiendia.jpg",tecnica: "Óleo sobre lienzo",  descripcion: "Dos hileras de figuras coronadas de flores se miran sobre fondo dorado. El pensamiento como diálogo infinito." },
+  { slug: "umbral",    titulo: "XXVI",imagen: "/obras/umbral.jpg",     tecnica: "Óleo sobre lienzo",  descripcion: "Una figura desnuda se abraza a un pilar oscuro mirando al cielo. El gesto de quien está en el límite entre dos mundos." },
+  { slug: "arena",     titulo: "XXVII",imagen: "/obras/arena.jpg",      tecnica: "Óleo sobre tabla",   descripcion: "Una multitud de cuerpos se agolpa en un espacio oval rosado. El rebaño, la masa, la soledad en el número." },
+  { slug: "corredor",  titulo: "XXVIII",imagen: "/obras/corredor.jpg", tecnica: "Óleo sobre lienzo",  descripcion: "Figuras en bata forman una fila en un corredor institucional nocturno. La burocracia como jaula." },
+  { slug: "primavera", titulo: "XXIX",imagen: "/obras/primavera.jpg",  tecnica: "Óleo sobre tabla",   descripcion: "Madres e hijos desnudos en un campo verde bajo cielo azul. La vida que florece sin permiso ni pudor." },
+  { slug: "pandemia",  titulo: "XXX", imagen: "/obras/coleccion-particular.jpg", tecnica: "Óleo sobre tabla", descripcion: "Colección particular. Obra que refleja la crisis sanitaria global desde la mirada única de Satrústegui." },
+  { slug: "maternidad",titulo: "XXXI",imagen: "/obras/maternidad.jpg", tecnica: "Óleo sobre lienzo",  descripcion: "La fuerza primigenia de la maternidad. Figura femenina que sostiene la vida con gesto protector y mirada serena." },
+  { slug: "retrato1",  titulo: "XXXII",imagen: "/obras/retrato1.jpg",   tecnica: "Óleo sobre tabla",   descripcion: "Rostro humano capturado con la intensidad expresionista característica del autor. Mirada que interpela al espectador." },
+  { slug: "retrato2",  titulo: "XXXIII",imagen: "/obras/retrato2.jpg",   tecnica: "Óleo sobre tabla",   descripcion: "Segunda aproximación al género del retrato. El rostro como territorio de emociones y narrativas silenciosas." },
 ];
 
 export default function Galeria() {
   const [lightbox, setLightbox] = useState<number | null>(null);
-  const destacadas = obras.filter((o) => o.destacada);
-  const resto = obras.filter((o) => !o.destacada);
 
   const prev = () => setLightbox((i) => (i !== null ? (i === 0 ? obras.length - 1 : i - 1) : 0));
   const next = () => setLightbox((i) => (i !== null ? (i + 1) % obras.length : 0));
@@ -73,20 +71,11 @@ export default function Galeria() {
         </p>
       </div>
 
-      {/* Obras destacadas — 2 columnas grandes */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-        {destacadas.map((obra) => {
-          const idx = obras.findIndex((o) => o.slug === obra.slug);
-          return <ObraCard key={obra.slug} obra={obra} grande onClick={() => setLightbox(idx)} />;
-        })}
-      </div>
-
-      {/* Resto en grid más columnas */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
-        {resto.map((obra) => {
-          const idx = obras.findIndex((o) => o.slug === obra.slug);
-          return <ObraCard key={obra.slug} obra={obra} onClick={() => setLightbox(idx)} />;
-        })}
+      {/* Todas las obras en grid de 2 columnas */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {obras.map((obra, idx) => (
+          <ObraCard key={obra.slug} obra={obra} grande={true} onClick={() => setLightbox(idx)} />
+        ))}
       </div>
 
       <div className="text-center mt-14">
