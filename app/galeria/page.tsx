@@ -72,9 +72,9 @@ export default function Galeria() {
       </div>
 
       {/* Todas las obras en grid de 2 columnas */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-3">
         {obras.map((obra, idx) => (
-          <ObraCard key={obra.slug} obra={obra} grande={true} onClick={() => setLightbox(idx)} />
+          <ObraCard key={obra.slug} obra={obra} onClick={() => setLightbox(idx)} />
         ))}
       </div>
 
