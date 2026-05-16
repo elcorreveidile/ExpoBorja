@@ -53,17 +53,17 @@ export default function Contacto() {
         {/* Info */}
         <div className="md:col-span-2 flex flex-col gap-8">
           <div>
-            <p className="text-xs tracking-[0.3em] text-[#c8962a] uppercase mb-3">Exposición</p>
+            <p className="text-xs tracking-[0.3em] text-[#c8962a] uppercase mb-3">El artista</p>
             <p
               style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
               className="text-lg text-[#ede4d2] mb-2"
             >
-              Del 6 al 19 de abril
+              Borja Satrústegui
             </p>
             <p className="text-sm text-[#9e8e78] leading-relaxed">
-              Centro Cívico del Albayzín<br />
-              Plaza Aliatar<br />
-              Granada
+              Pintor de realismo social<br />
+              y expresionismo<br />
+              Granada, España
             </p>
           </div>
 
@@ -136,7 +136,7 @@ export default function Contacto() {
                   <option value="cuadro">🎨 Tengo un cuadro de Borja (enviar foto)</option>
                   <option value="original">Consulta sobre obra original</option>
                   <option value="lamina">Pedido de lámina</option>
-                  <option value="expo">Sobre la exposición</option>
+                  <option value="comision">Solicitud de comisión artística</option>
                   <option value="prensa">Prensa / medios</option>
                 </select>
               </div>

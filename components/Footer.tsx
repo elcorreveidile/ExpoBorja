@@ -19,14 +19,13 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Exposición */}
+          {/* Sobre el artista */}
           <div>
-            <h4 className="text-xs tracking-[0.2em] uppercase text-[#c8962a] mb-4">Exposición</h4>
+            <h4 className="text-xs tracking-[0.2em] uppercase text-[#c8962a] mb-4">Sobre el artista</h4>
             <p className="text-sm text-[#b8aa96] leading-relaxed">
-              Del 6 al 19 de abril<br />
-              Centro Cívico del Albayzín<br />
-              Plaza Aliatar, Granada<br />
-              Ayuntamiento de Granada
+              Nacido en San Sebastián en 1943<br />
+              Afincado en Granada desde hace 30 años<br />
+              Pintor de realismo social y expresionismo
             </p>
           </div>
 
@@ -36,7 +35,6 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 { href: "/galeria", label: "Galería" },
-                { href: "/exposicion", label: "Exposición" },
                 { href: "/sobre-borja", label: "Sobre Borja" },
                 { href: "/tienda", label: "Tienda" },
                 { href: "/contacto", label: "Contacto" },

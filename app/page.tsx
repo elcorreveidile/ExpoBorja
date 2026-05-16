@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const obras = [
-  { slug: "puente",    titulo: "El Puente",       imagen: "/obras/puente.jpg",    tecnica: "sobre lienzo" },
-  { slug: "justicia",  titulo: "Justicia Social", imagen: "/obras/justicia.jpg",  tecnica: "sobre lienzo" },
-  { slug: "arlequin",  titulo: "El Arlequín",     imagen: "/obras/arlequin.jpg",  tecnica: "sobre lienzo" },
+  { slug: "puente",    titulo: "IV. El Puente",       imagen: "/obras/puente.jpg",    tecnica: "sobre lienzo" },
+  { slug: "justicia",  titulo: "II. Justicia Social", imagen: "/obras/justicia.jpg",  tecnica: "sobre lienzo" },
+  { slug: "arlequin",  titulo: "IX. El Arlequín",     imagen: "/obras/arlequin.jpg",  tecnica: "sobre lienzo" },
 ];
 
 export default function Home() {
@@ -14,8 +14,8 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/cartel/cartel.jpg"
-            alt="Exposición Borja Satrústegui"
+            src="/borja-foto-1.jpg"
+            alt="Borja Satrústegui - Pintor"
             fill
             className="object-cover object-center"
             priority
@@ -26,7 +26,7 @@ export default function Home() {
 
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <p className="text-xs tracking-[0.4em] uppercase text-[#c8962a] mb-6 font-light">
-            Exposición de Pintura
+            Pintor
           </p>
           <h1
             style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
@@ -37,10 +37,10 @@ export default function Home() {
           </h1>
           <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#c8962a] to-transparent mx-auto my-8" />
           <p className="text-sm md:text-base tracking-[0.15em] text-[#b8aa96] uppercase mb-2">
-            Del 6 al 19 de abril
+            Realismo social y expresionismo
           </p>
           <p className="text-sm text-[#9e8e78] tracking-wide mb-12">
-            Centro Cívico del Albayzín · Plaza Aliatar · Granada
+            Granada
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -66,7 +66,7 @@ export default function Home() {
 
       {/* INTRO */}
       <section className="max-w-4xl mx-auto px-6 py-24 text-center">
-        <p className="text-xs tracking-[0.3em] text-[#c8962a] uppercase mb-6">El pintor</p>
+        <p className="text-xs tracking-[0.3em] text-[#c8962a] uppercase mb-6">El artista</p>
         <h2
           style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
           className="text-3xl md:text-4xl text-[#ede4d2] font-normal leading-snug mb-8"
@@ -92,7 +92,7 @@ export default function Home() {
       {/* OBRAS DESTACADAS */}
       <section className="px-6 py-12 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-xs tracking-[0.3em] text-[#c8962a] uppercase mb-3">Selección de obras</p>
+          <p className="text-xs tracking-[0.3em] text-[#c8962a] uppercase mb-3">Obra pictórica</p>
           <h2
             style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             className="text-3xl text-[#ede4d2]"
@@ -139,30 +139,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EXPOSICIÓN BANNER */}
+      {/* CONTACTO BANNER */}
       <section className="my-20">
         <div className="bg-[#1a150d] border-t border-b border-[#2e2416] py-16 px-6">
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
             <div>
-              <p className="text-xs tracking-[0.3em] text-[#c8962a] uppercase mb-3">Exposición</p>
+              <p className="text-xs tracking-[0.3em] text-[#c8962a] uppercase mb-3">Contacto</p>
               <h2
                 style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                 className="text-3xl md:text-4xl text-[#ede4d2] mb-4"
               >
-                Del 6 al 19 de abril
+                ¿Interesado en una obra?
               </h2>
               <p className="text-[#9e8e78] text-sm leading-relaxed">
-                Centro Cívico del Albayzín<br />
-                Plaza Aliatar · Granada<br />
-                Ayuntamiento de Granada
+                Granada, España<br />
+                Available for commissions
               </p>
             </div>
             <div className="flex flex-col gap-4">
               <Link
-                href="/exposicion"
+                href="/contacto"
                 className="inline-block px-8 py-3 border border-[#c8962a] text-[#c8962a] text-xs tracking-[0.2em] uppercase hover:bg-[#c8962a] hover:text-[#0c0b09] transition-all duration-300 text-center"
               >
-                Más información
+                Contactar
               </Link>
               <Link
                 href="/tienda"

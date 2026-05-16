@@ -157,10 +157,10 @@ export default function SobreBorja() {
             Ver galería
           </Link>
           <Link
-            href="/exposicion"
+            href="/tienda"
             className="inline-block px-8 py-3 bg-[#c8962a] text-[#0c0b09] text-xs tracking-[0.2em] uppercase font-semibold hover:bg-[#e2b24a] transition-all duration-300"
           >
-            Ver exposición
+            Tienda online
           </Link>
         </div>
       </div>

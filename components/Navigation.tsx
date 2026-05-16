@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 const enlaces = [
   { href: "/", label: "Inicio" },
   { href: "/galeria", label: "Galería" },
-  { href: "/exposicion", label: "Exposición" },
   { href: "/sobre-borja", label: "Sobre Borja" },
   { href: "/tienda", label: "Tienda" },
   { href: "/contacto", label: "Contacto" },
@@ -32,8 +31,8 @@ export default function Navigation() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
+      {/* Fila 1: nombre + botón móvil */}
+      <div className="max-w-7xl mx-auto px-6 pt-4 pb-2 flex items-center justify-between">
         <Link
           href="/"
           className="group flex flex-col leading-none drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]"
@@ -49,8 +48,27 @@ export default function Navigation() {
           </span>
         </Link>
 
-        {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8">
+        {/* Botón menú — solo móvil */}
+        <button
+          onClick={() => setMenuAbierto(!menuAbierto)}
+          className="md:hidden flex items-center gap-2 px-3 py-2 bg-[#0c0b09]/85 border border-[#c8962a]/50 hover:border-[#c8962a] transition-colors duration-200"
+          aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}
+        >
+          <span className="flex flex-col gap-[5px]">
+            <span className={`block h-[2px] bg-[#c8962a] transition-all duration-300 ${menuAbierto ? "w-5 rotate-45 translate-y-[7px]" : "w-5"}`} />
+            <span className={`block h-[2px] bg-[#c8962a] transition-all duration-300 ${menuAbierto ? "opacity-0 w-5" : "w-3"}`} />
+            <span className={`block h-[2px] bg-[#c8962a] transition-all duration-300 ${menuAbierto ? "w-5 -rotate-45 -translate-y-[7px]" : "w-5"}`} />
+          </span>
+          <span className="text-[10px] tracking-[0.2em] uppercase text-[#c8962a] font-medium">
+            {menuAbierto ? "Cerrar" : "Menú"}
+          </span>
+        </button>
+      </div>
+
+      {/* Fila 2: links — solo desktop, debajo del nombre */}
+      <div className="hidden md:block max-w-7xl mx-auto px-6 pb-3">
+        <div className="w-full h-px bg-[#2e2416]/60 mb-3" />
+        <ul className="flex items-center gap-8">
           {enlaces.map(({ href, label }) => {
             const activo = pathname === href;
             return (
@@ -69,25 +87,9 @@ export default function Navigation() {
             );
           })}
         </ul>
+      </div>
 
-        {/* Botón menú móvil */}
-        <button
-          onClick={() => setMenuAbierto(!menuAbierto)}
-          className="md:hidden flex items-center gap-2 px-3 py-2 bg-[#0c0b09]/85 border border-[#c8962a]/50 hover:border-[#c8962a] transition-colors duration-200"
-          aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}
-        >
-          <span className="flex flex-col gap-[5px]">
-            <span className={`block h-[2px] bg-[#c8962a] transition-all duration-300 ${menuAbierto ? "w-5 rotate-45 translate-y-[7px]" : "w-5"}`} />
-            <span className={`block h-[2px] bg-[#c8962a] transition-all duration-300 ${menuAbierto ? "opacity-0 w-5" : "w-3"}`} />
-            <span className={`block h-[2px] bg-[#c8962a] transition-all duration-300 ${menuAbierto ? "w-5 -rotate-45 -translate-y-[7px]" : "w-5"}`} />
-          </span>
-          <span className="text-[10px] tracking-[0.2em] uppercase text-[#c8962a] font-medium">
-            {menuAbierto ? "Cerrar" : "Menú"}
-          </span>
-        </button>
-      </nav>
-
-      {/* Menú desplegable móvil — solo existe en el DOM cuando está abierto */}
+      {/* Menú desplegable móvil */}
       {menuAbierto && (
         <div className="md:hidden bg-[#0c0b09] border-t border-[#2e2416]">
           <ul className="flex flex-col py-4">
