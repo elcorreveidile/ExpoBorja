@@ -6,9 +6,12 @@ import { useState } from "react";
 import Lightbox from "@/components/Lightbox";
 
 const obras = [
-  { slug: "panadero",  titulo: "XV",  imagen: "/obras/panadero.jpg",  tecnica: "Óleo sobre lienzo", descripcion: "La calma del trabajo cotidiano: un panadero amasa en una cocina de suelo a cuadros. Costumbrismo con dignidad." },
-  { slug: "madre",     titulo: "XVI", imagen: "/obras/madre.jpg",     tecnica: "Pastel sobre papel", descripcion: "Dos figuras sostienen un bebé entre campos dorados. Ternura y simbolismo de fuerza primitiva." },
-  { slug: "procesion", titulo: "XVII",imagen: "/obras/procesion.jpg", tecnica: "Óleo sobre tabla",   descripcion: "Una escena dentro de un cuadro. Figuras enmarcadas por rostros que observan desde los bordes del lienzo." },
+  { slug: "panadero",   titulo: "XV",   imagen: "/obras/panadero.jpg",    tecnica: "Óleo sobre lienzo",  descripcion: "La calma del trabajo cotidiano: un panadero amasa en una cocina de suelo a cuadros. Costumbrismo con dignidad." },
+  { slug: "madre",      titulo: "XVI",  imagen: "/obras/madre.jpg",       tecnica: "Pastel sobre papel", descripcion: "Dos figuras sostienen un bebé entre campos dorados. Ternura y simbolismo de fuerza primitiva." },
+  { slug: "procesion",  titulo: "XVII", imagen: "/obras/procesion.jpg",   tecnica: "Óleo sobre tabla",   descripcion: "Una escena dentro de un cuadro. Figuras enmarcadas por rostros que observan desde los bordes del lienzo." },
+  { slug: "maternidad", titulo: "XXXI", imagen: "/obras/maternidad.jpg",  tecnica: "Óleo sobre lienzo",  descripcion: "La fuerza primigenia de la maternidad. Figura femenina que sostiene la vida con gesto protector y mirada serena." },
+  { slug: "retrato1",   titulo: "XXXII",imagen: "/obras/retrato1.jpg",     tecnica: "Óleo sobre tabla",   descripcion: "Rostro humano capturado con la intensidad expresionista característica del autor. Mirada que interpela al espectador." },
+  { slug: "retrato2",   titulo: "XXXIII",imagen: "/obras/retrato2.jpg",     tecnica: "Óleo sobre tabla",   descripcion: "Segunda aproximación al género del retrato. El rostro como territorio de emociones y narrativas silenciosas." },
 ];
 
 export default function ObrasSigloXX() {

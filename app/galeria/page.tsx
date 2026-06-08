@@ -20,9 +20,6 @@ const obras = [
   { slug: "encuentro", titulo: "XII", imagen: "/obras/encuentro.jpg", tecnica: "Óleo sobre tabla",   descripcion: "Dos rostros en tensión expresionista. Trazo libre y colores de gran intensidad." },
   { slug: "flores",    titulo: "XIII",imagen: "/obras/flores.jpg",    tecnica: "Óleo sobre lienzo",  descripcion: "Flores amarillas sobre azul violeta. Rareza botánica en la obra de Satrústegui: belleza sin más pretensión." },
   { slug: "alhambra",  titulo: "XIV", imagen: "/obras/alhambra.jpg",  tecnica: "Óleo sobre tabla",   descripcion: "Dos figuras moriscas conversan frente a la Alhambra. Diálogo de culturas con el monumento nazarí como testigo." },
-  { slug: "panadero",  titulo: "XV",  imagen: "/obras/panadero.jpg",  tecnica: "Óleo sobre lienzo",  descripcion: "La calma del trabajo cotidiano: un panadero amasa en una cocina de suelo a cuadros. Costumbrismo con dignidad." },
-  { slug: "madre",     titulo: "XVI", imagen: "/obras/madre.jpg",     tecnica: "Pastel sobre papel", descripcion: "Dos figuras sostienen un bebé entre campos dorados. Ternura y simbolismo de fuerza primitiva." },
-  { slug: "procesion", titulo: "XVII",imagen: "/obras/procesion.jpg", tecnica: "Óleo sobre tabla",   descripcion: "Una escena dentro de un cuadro. Figuras enmarcadas por rostros que observan desde los bordes del lienzo." },
   { slug: "monjas",    titulo: "XVIII",imagen: "/obras/monjas.jpg",    tecnica: "Óleo sobre cartón",  descripcion: "Religiosas y figuras desnudas habitan mundos paralelos separados por un umbral." },
   { slug: "espejo",    titulo: "XIX", imagen: "/obras/espejo.jpg",    tecnica: "Óleo sobre cartón",  descripcion: "Una mujer de amarillo y su reflejo en un espacio surreal. La identidad y el doble en tonos verdes y ocres." },
   { slug: "calle",     titulo: "XX",  imagen: "/obras/calle.jpg",      tecnica: "Óleo sobre cartón",  descripcion: "Dos figuras avanzan por una calle de tonos azules y cálidos. El tiempo detenido de la vida ordinaria." },
@@ -36,9 +33,6 @@ const obras = [
   { slug: "corredor",  titulo: "XXVIII",imagen: "/obras/corredor.jpg", tecnica: "Óleo sobre lienzo",  descripcion: "Figuras en bata forman una fila en un corredor institucional nocturno. La burocracia como jaula." },
   { slug: "primavera", titulo: "XXIX",imagen: "/obras/primavera.jpg",  tecnica: "Óleo sobre tabla",   descripcion: "Madres e hijos desnudos en un campo verde bajo cielo azul. La vida que florece sin permiso ni pudor." },
   { slug: "pandemia",  titulo: "XXX", imagen: "/obras/coleccion-particular.jpg", tecnica: "Óleo sobre tabla", descripcion: "Colección particular. Obra que refleja la crisis sanitaria global desde la mirada única de Satrústegui." },
-  { slug: "maternidad",titulo: "XXXI",imagen: "/obras/maternidad.jpg", tecnica: "Óleo sobre lienzo",  descripcion: "La fuerza primigenia de la maternidad. Figura femenina que sostiene la vida con gesto protector y mirada serena." },
-  { slug: "retrato1",  titulo: "XXXII",imagen: "/obras/retrato1.jpg",   tecnica: "Óleo sobre tabla",   descripcion: "Rostro humano capturado con la intensidad expresionista característica del autor. Mirada que interpela al espectador." },
-  { slug: "retrato2",  titulo: "XXXIII",imagen: "/obras/retrato2.jpg",   tecnica: "Óleo sobre tabla",   descripcion: "Segunda aproximación al género del retrato. El rostro como territorio de emociones y narrativas silenciosas." },
 ];
 
 export default function Galeria() {
