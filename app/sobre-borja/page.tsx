@@ -17,18 +17,19 @@ export default function SobreBorja() {
       </div>
 
       <div className="max-w-5xl mx-auto">
-        {/* Intro con imagen */}
+        {/* Intro con imagen pequeña de LA REPÚBLICA */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-20">
+          {/* Vista previa pequeña de LA REPÚBLICA */}
           <div className="relative">
-            <div className="relative aspect-[3/4] overflow-hidden border border-[#2e2416]">
+            <div className="relative aspect-[3/4] overflow-hidden border border-[#2e2416] max-w-[200px] mx-auto md:mx-0">
               <Image
                 src="/obras/republica.jpg"
-                alt="Obra de Borja Satrústegui"
+                alt="La República - Borja Satrústegui"
                 fill
                 className="object-cover"
               />
             </div>
-            <div className="absolute -bottom-3 -left-3 w-full h-full border border-[#2e2416] -z-10" />
+            <p className="text-xs text-[#6a5e50] text-center mt-2 italic">&quot;La República&quot;</p>
           </div>
 
           <div className="flex flex-col gap-8 pt-4">
@@ -59,7 +60,7 @@ export default function SobreBorja() {
           </div>
         </div>
 
-        {/* FOTOS DEL ARTISTA */}
+        {/* FOTOS DEL ARTISTA - Solo fotos 1 y 3 */}
         <div className="mb-16">
           <div className="text-center mb-8">
             <p className="text-xs tracking-[0.3em] text-[#c8962a] uppercase mb-3">El artista</p>
@@ -76,26 +77,6 @@ export default function SobreBorja() {
                   alt="Borja Satrústegui en la galería"
                   fill
                   className="object-cover object-top"
-                />
-              </div>
-            </div>
-            <div className="relative">
-              <div className="relative aspect-[3/4] overflow-hidden border border-[#2e2416]">
-                <Image
-                  src="/borja-foto-2.jpg"
-                  alt="Borja Satrústegui sonriendo en la galería"
-                  fill
-                  className="object-cover object-center"
-                />
-              </div>
-            </div>
-            <div className="relative">
-              <div className="relative aspect-[3/4] overflow-hidden border border-[#2e2416]">
-                <Image
-                  src="/borja-foto-4.jpg"
-                  alt="Borja Satrústegui en la galería"
-                  fill
-                  className="object-cover object-center"
                 />
               </div>
             </div>
@@ -227,44 +208,50 @@ export default function SobreBorja() {
         </div>
       </div>
 
-      {/* SECCIÓN ARTÍCULO */}
+      {/* SECCIÓN RESEÑAS DESTACADAS */}
       <div className="max-w-5xl mx-auto mt-20">
         <div className="text-center mb-10">
-          <p className="text-xs tracking-[0.3em] text-[#c8962a] uppercase mb-3">Prensa</p>
+          <p className="text-xs tracking-[0.3em] text-[#c8962a] uppercase mb-3">Prensa y reseñas</p>
           <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-3xl text-[#ede4d2]">
-            La pintura contemporánea en Granada
+            Reseñas destacadas
           </h2>
-          <p className="text-sm text-[#9e8e78] mt-2">De Borja Satrústegui a Paula Cervilla</p>
-          <p className="text-xs text-[#6a5e50] mt-1">Por Luis Pablo Núñez | Publicada viernes, 8 de abril de 2022</p>
         </div>
 
-        <div className="bg-[#1a150d] border border-[#2e2416] p-8 md:p-10">
-          <div className="relative aspect-[3/2] overflow-hidden border border-[#2e2416] mb-8">
-            <Image
-              src="/articulo-granada.jpg"
-              alt="Artículo sobre pintura contemporánea en Granada"
-              fill
-              className="object-cover"
-            />
+        {/* RESEÑA 1 */}
+        <div className="bg-[#1a150d] border border-[#2e2416] p-8 md:p-10 mb-8">
+          <div className="flex flex-col md:flex-row gap-6 mb-6">
+            <div className="relative aspect-[3/2] overflow-hidden border border-[#2e2416] w-full md:w-1/3 shrink-0">
+              <Image
+                src="/articulo-granada.jpg"
+                alt="Artículo sobre pintura contemporánea en Granada"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="flex-1">
+              <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-xl text-[#ede4d2] mb-2">
+                La pintura contemporánea en Granada
+              </h3>
+              <p className="text-sm text-[#9e8e78] mb-2">De Borja Satrústegui a Paula Cervilla</p>
+              <p className="text-xs text-[#6a5e50] mb-4">Por Luis Pablo Núñez | Publicada viernes, 8 de abril de 2022</p>
+              <p className="text-sm text-[#9e8e78] leading-relaxed">
+                Borja Satrústegui nació en San Sebastián en 1943: tiene la edad de mi padre y, a pesar del bastón, un porte recio (como que es del norte…). Estudió en la Escuela de Bellas Artes de San Fernando y en el Círculo de Bellas Artes de Madrid, pero optó por la vida bohemia, como pintor anarquista, republicano, viviendo durante unos meses en los campamentos de refugiados saharauis del Frente Polisario...
+              </p>
+            </div>
           </div>
+          <div className="border-t border-[#2e2416] pt-4">
+            <a
+              href="#"
+              className="inline-block text-xs tracking-[0.2em] uppercase text-[#c8962a] hover:text-[#ede4d2] transition-colors"
+            >
+              Leer reseña completa →
+            </a>
+          </div>
+        </div>
 
-          <div className="prose prose-invert max-w-none">
-            <p className="text-sm text-[#9e8e78] leading-relaxed mb-4">
-              Borja Satrústegui nació en San Sebastián en 1943: tiene la edad de mi padre y, a pesar del bastón, un porte recio (como que es del norte…). Estudió en la Escuela de Bellas Artes de San Fernando y en el Círculo de Bellas Artes de Madrid, pero optó por la vida bohemia, como pintor anarquista, republicano, viviendo durante unos meses en los campamentos de refugiados saharauis del Frente Polisario, otros en Orán, después en Portugalete y, durante otros años, en un velero, me dice, para llegar luego a su casa del Albaicín.
-            </p>
-            <p className="text-sm text-[#9e8e78] leading-relaxed mb-4">
-              La pintura es su modo de vida y no le importa estar lejos del circuito académico, aunque su obra merece estarlo. Granada cuenta con otros lugares para el desarrollo del arte: además de los centros de formación (la Facultad de Bellas Artes y la Escuela de Artes y Oficios), existe una Real Academia de Bellas Artes de Granada, creada en 1777 (recientemente se hizo una exposición con algunos de sus fondos, del 16/12/21 al 30/01/22, en la Sala de exposiciones del Centro Cultural Gran Capitán) y el Centro Artístico, Literario y Científico de Granada.
-            </p>
-            <p className="text-sm text-[#9e8e78] leading-relaxed mb-4">
-              El Centro José Guerrero, por su parte, realiza exposiciones temporales de pintura, fotografía y nuevos medios que se suman al legado del pintor que allí se conserva. El Centro Lorca (sin olvidarnos de su casa natal y de la Casa-Museo Huerta de San Vicente), del mismo modo, promueve la difusión del archivo con exposiciones. La Fundación CajaGranada cuenta con una colección artística interesante y exposiciones regulares relevantes, como la realizada hace poco sobre Mariano Fortuny y Madrazo, francamente interesante.
-            </p>
-            <p className="text-sm text-[#9e8e78] leading-relaxed mb-4">
-              La Universidad de Granada (UGR) es una de las grandes dinamizadoras de vida cultural en la ciudad: desde marzo a mayo de 2022 se pueden ver obras de primer nivel para la exposición «Zuloaga, entre lo gitano y el flamenco» y, desde abril, la exposición con obras de Manuel Ángeles Ortiz sobre el Albaicín: Obsesión (con su serie «Albaicines») en el Palacio del Almirante.
-            </p>
-            <p className="text-sm text-[#9e8e78] leading-relaxed">
-              Basten estos ejemplos para mostrar que Granada es más que la Alhambra y el arte hispanomusulmán, reconocido con justicia. También debe promoverse el arte actual: a fin de cuentas, el arte de este siglo no puede sino reflejar las circunstancias que estamos viviendo y, como decía una publicidad de una de las exposiciones arriba indicadas, hay que comprar a los artistas vivos, pues los muertos ya no necesitan dinero…
-            </p>
-          </div>
+        {/* Placeholder para más reseñas */}
+        <div className="border border-dashed border-[#2e2416] p-8 text-center">
+          <p className="text-xs text-[#6a5e50]">Más reseñas próximamente...</p>
         </div>
       </div>
 
