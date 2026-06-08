@@ -196,6 +196,15 @@ export default function SobreBorja() {
               La obra desbordó los espacios institucionales para habitar bares, portadas de discos, películas y revistas, convirtiéndose en un símbolo de la <em>Movida</em> madrileña.
             </p>
 
+            <div className="border-t border-[#2e2416] my-4" />
+
+            <p className="text-xs text-[#6a5e50] italic">
+              Por Javier Celorrio
+            </p>
+            <p className="text-sm text-[#9e8e78] leading-relaxed">
+              Y si van al Museo Reina Sofía no dejen de ver los tableros del bar La Vaquería que Cesepe y él realizaron en 1975 para el bar, cuando éste fue reventado por los Guerrilleros de Cristo Rey y distintos artistas ofrecieron sus trabajos para la recuperación del mismo.
+            </p>
+
             <a
               href="https://www.museoreinasofia.es/colecciones/artista/satrustegui-borja"
               target="_blank"
@@ -249,9 +258,30 @@ export default function SobreBorja() {
           </div>
         </div>
 
-        {/* Placeholder para más reseñas */}
-        <div className="border border-dashed border-[#2e2416] p-8 text-center">
-          <p className="text-xs text-[#6a5e50]">Más reseñas próximamente...</p>
+        {/* RESEÑA 2 */}
+        <div className="bg-[#1a150d] border border-[#2e2416] p-8 md:p-10 mb-8">
+          <div className="mb-6">
+            <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-xl text-[#ede4d2] mb-2">
+              Exposición en La Galería Arte-Sur de Almuñécar
+            </h3>
+            <p className="text-sm text-[#9e8e78] mb-2">Calle Vélez, Almuñécar</p>
+            <p className="text-xs text-[#6a5e50]">Por Luis Pablo Núñez | Publicada 8 de abril de 2022</p>
+          </div>
+
+          <div className="prose prose-invert max-w-none space-y-4">
+            <p className="text-sm text-[#9e8e78] leading-relaxed">
+              El pintor donostiarra, Borja Satrústegui (1943) expone en La Galería Arte-Sur de Almuñécar (Calle Vélez) una treintena de obras caracterizadas por la figuración expresionista del estilo muy personal del artista y donde el individuo integrado en la masa, representada sobre lienzos y cartones, presenta una serie de incógnitas al espectador.
+            </p>
+            <p className="text-sm text-[#9e8e78] leading-relaxed">
+              ¿Son felices o infelices? ¿Son el engranaje de una máquina o es la máquina quien los engulle? Personalmente tengo la impresión de que los protagonistas de las obras nos miran para que los salvemos o que avisan del peligro de dejarnos seducir. En cualquiera de los casos un dramatismo tenso, una gasa de pintura negra en la tradición de Goya o Gutiérrez Solana, sin olvidar que Caravaggio es uno de los pintores favoritos del guipuzcoano.
+            </p>
+            <p className="text-sm text-[#9e8e78] leading-relaxed">
+              Satrústegui puede hacer suya la frase del poeta y pintor inglés del siglo XVIII, William Blake, cuando ante el discurso de Reynolds que sentenciaba que «la tendencia a la abstracción era la mayor gloria de la mente humana», le contestó que «generalizar es ser un idiota, particularizar es la única distinción del mérito». Obvio que Blake está también entre los favoritos del pintor, pues no es casual que en su vertiente de cocinero, Satrústegui le pusiera su nombre a uno de sus restaurantes que abrió en Portugalete allá por los años ochenta.
+            </p>
+            <p className="text-sm text-[#9e8e78] leading-relaxed">
+              Ese particularizar va en la esencia humana del artista cuya biografía está repleta de situaciones peculiares como su etapa de estancia entre los saharauis o esa decisión de vivir en una cueva del Albaycín granadino, tras viajar algunos años en barco por el Mediterráneo, y ciudad y barrio donde sigue residiendo desde hace treinta años. Se puede deducir que la intensidad y autenticidad es marca de la casa.
+            </p>
+          </div>
         </div>
       </div>
 
