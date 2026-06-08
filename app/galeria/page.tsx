@@ -57,7 +57,7 @@ export default function Galeria() {
       <div className="text-center mb-16">
         <p className="text-xs tracking-[0.4em] text-[#c8962a] uppercase mb-4">Obra pictórica</p>
         <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-4xl md:text-5xl text-[#ede4d2] font-normal mb-4">
-          Galería
+          Obra nueva
         </h1>
         <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#c8962a] to-transparent mx-auto mb-6" />
         <p className="text-[#9e8e78] max-w-xl mx-auto text-sm leading-relaxed">

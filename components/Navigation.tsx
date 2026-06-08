@@ -6,8 +6,8 @@ import { usePathname } from "next/navigation";
 
 const enlaces = [
   { href: "/", label: "Inicio" },
-  { href: "/galeria", label: "Galería" },
-  { href: "/obras-siglo-xx", label: "Obras antiguas y modernas" },
+  { href: "/galeria", label: "Obra nueva" },
+  { href: "/obras-siglo-xx", label: "Obra antigua" },
   { href: "/sobre-borja", label: "Sobre Borja" },
   { href: "/tienda", label: "Tienda" },
   { href: "/contacto", label: "Contacto" },
