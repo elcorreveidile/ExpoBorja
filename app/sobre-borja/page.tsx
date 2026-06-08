@@ -1,9 +1,37 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import Lightbox from "@/components/Lightbox";
 
 export default function SobreBorja() {
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+
   return (
     <div className="pt-32 pb-20 px-6">
+      {/* Lightbox */}
+      {lightboxImage && (
+        <div className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4" onClick={() => setLightboxImage(null)}>
+          <div className="relative max-w-4xl max-h-[90vh] w-full" onClick={(e) => e.stopPropagation()}>
+            <div className="relative aspect-[3/4] w-full">
+              <Image
+                src={lightboxImage}
+                alt="La República - Borja Satrústegui"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <button
+              onClick={() => setLightboxImage(null)}
+              className="absolute top-4 right-4 text-white/80 hover:text-white text-4xl leading-none"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Encabezado */}
       <div className="text-center mb-16">
         <p className="text-xs tracking-[0.4em] text-[#c8962a] uppercase mb-4">Biografía</p>
@@ -19,17 +47,23 @@ export default function SobreBorja() {
       <div className="max-w-5xl mx-auto">
         {/* Intro con imagen pequeña de LA REPÚBLICA */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-20">
-          {/* Vista previa pequeña de LA REPÚBLICA */}
+          {/* Vista previa pequeña de LA REPÚBLICA - cliqueable */}
           <div className="relative">
-            <div className="relative aspect-[3/4] overflow-hidden border border-[#2e2416] max-w-[200px] mx-auto md:mx-0">
+            <div
+              className="relative aspect-[3/4] overflow-hidden border border-[#2e2416] max-w-[200px] mx-auto md:mx-0 cursor-pointer hover:border-[#c8962a]/60 transition-colors duration-300 group"
+              onClick={() => setLightboxImage("/obras/republica.jpg")}
+            >
               <Image
                 src="/obras/republica.jpg"
                 alt="La República - Borja Satrústegui"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                <span className="text-white/0 group-hover:text-white/90 text-3xl transition-opacity duration-300">⊕</span>
+              </div>
             </div>
-            <p className="text-xs text-[#6a5e50] text-center mt-2 italic">&quot;La República&quot;</p>
+            <p className="text-xs text-[#6a5e50] text-center mt-2 italic">&quot;La República&quot; - Haz clic para ampliar</p>
           </div>
 
           <div className="flex flex-col gap-8 pt-4">
