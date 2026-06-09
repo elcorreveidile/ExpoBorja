@@ -19,7 +19,6 @@ const obras = [
   { slug: "abril-471",  titulo: "5",    imagen: "/obras-blog/abril-471.jpg",  tecnica: "Momento", descripcion: "El autor traza con prisa e ímpetu, desarrollando la composición como grafía icónica de momentos sencillos." },
   { slug: "abril-473",  titulo: "7",    imagen: "/obras-blog/abril-473.jpg",  tecnica: "Momento", descripcion: "El color organizado como lenguaje sensitivo que trasciende las figuras, tomando vida y fuerza propia." },
   { slug: "abril-481",  titulo: "10",   imagen: "/obras-blog/abril-481.jpg",  tecnica: "Momento", descripcion: "Estilo ambivalente, apareciendo como sombra de la modernidad clásica y como ilustración pop." },
-  { slug: "abril-482",  titulo: "11",   imagen: "/obras-blog/abril-482.jpg",  tecnica: "Momento", descripcion: "Trabajo sincero e independiente, realizado desde un modo propio de entender la figuración." },
   { slug: "abril-484",  titulo: "12",   imagen: "/obras-blog/abril-484.jpg",  tecnica: "Momento", descripcion: "Personajes que adoptan poses que recuerdan a la obra de Gauguin, en impresión se queda." },
   { slug: "abril-485",  titulo: "13",   imagen: "/obras-blog/abril-485.jpg",  tecnica: "Momento", descripcion: "Aroma de ilustración de los setenta y ochenta, surge como brillo tangencial en la memoria." },
   { slug: "abril-489",  titulo: "16",   imagen: "/obras-blog/abril-489.jpg",  tecnica: "Momento", descripcion: "Influencias de las gamas cromáticas bien encajadas, tomando el color vida y fuerza propia." },
