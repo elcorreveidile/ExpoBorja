@@ -19,7 +19,6 @@ const obras = [
   { slug: "multitud",  titulo: "XI",  imagen: "/obras/multitud.jpg",  tecnica: "Óleo sobre tabla",   descripcion: "Una muchedumbre densa ante la figura de la muerte. Lo cotidiano y lo existencial en un espacio expresionista." },
   { slug: "encuentro", titulo: "XII", imagen: "/obras/encuentro.jpg", tecnica: "Óleo sobre tabla",   descripcion: "Dos rostros en tensión expresionista. Trazo libre y colores de gran intensidad." },
   { slug: "flores",    titulo: "XIII",imagen: "/obras/flores.jpg",    tecnica: "Óleo sobre lienzo",  descripcion: "Flores amarillas sobre azul violeta. Rareza botánica en la obra de Satrústegui: belleza sin más pretensión." },
-  { slug: "alhambra",  titulo: "XIV", imagen: "/obras/alhambra.jpg",  tecnica: "Óleo sobre tabla",   descripcion: "Dos figuras moriscas conversan frente a la Alhambra. Diálogo de culturas con el monumento nazarí como testigo." },
   { slug: "monjas",    titulo: "XVIII",imagen: "/obras/monjas.jpg",    tecnica: "Óleo sobre cartón",  descripcion: "Religiosas y figuras desnudas habitan mundos paralelos separados por un umbral." },
   { slug: "espejo",    titulo: "XIX", imagen: "/obras/espejo.jpg",    tecnica: "Óleo sobre cartón",  descripcion: "Una mujer de amarillo y su reflejo en un espacio surreal. La identidad y el doble en tonos verdes y ocres." },
   { slug: "calle",     titulo: "XX",  imagen: "/obras/calle.jpg",      tecnica: "Óleo sobre cartón",  descripcion: "Dos figuras avanzan por una calle de tonos azules y cálidos. El tiempo detenido de la vida ordinaria." },
