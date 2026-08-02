@@ -32,6 +32,7 @@ const obras = [
   { slug: "corredor",  titulo: "XXVIII",imagen: "/obras/corredor.jpg", tecnica: "Óleo sobre lienzo",  descripcion: "Figuras en bata forman una fila en un corredor institucional nocturno. La burocracia como jaula." },
   { slug: "primavera", titulo: "XXIX",imagen: "/obras/primavera.jpg",  tecnica: "Óleo sobre tabla",   descripcion: "Madres e hijos desnudos en un campo verde bajo cielo azul. La vida que florece sin permiso ni pudor." },
   { slug: "pandemia",  titulo: "XXX", imagen: "/obras/coleccion-particular.jpg", tecnica: "Óleo sobre tabla", descripcion: "Colección particular. Obra que refleja la crisis sanitaria global desde la mirada única de Satrústegui." },
+  { slug: "jubilo",    titulo: "XXXI",imagen: "/obras/jubilo.jpg",     tecnica: "Óleo sobre lienzo",  descripcion: "Una multitud de figuras desnudas alza los brazos bajo un cielo estrellado. Éxtasis colectivo de la humanidad congregada entre haces de luz." },
 ];
 
 export default function Galeria() {
