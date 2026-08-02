@@ -48,12 +48,6 @@ const obras = [
   { slug: "obra-nueva-21", titulo: "43", imagen: "/obras-nuevas/obra-nueva-21.jpg", tecnica: "Óleo", descripcion: "Obra antigua de Borja Satrústegui." },
   { slug: "obra-nueva-22", titulo: "44", imagen: "/obras-nuevas/obra-nueva-22.jpg", tecnica: "Óleo", descripcion: "Obra antigua de Borja Satrústegui." },
   { slug: "obra-nueva-23", titulo: "45", imagen: "/obras-nuevas/obra-nueva-23.jpg", tecnica: "Óleo", descripcion: "Obra antigua de Borja Satrústegui." },
-  { slug: "obra-nueva-24", titulo: "46", imagen: "/obras-nuevas/obra-nueva-24.jpg", tecnica: "Óleo", descripcion: "Obra antigua de Borja Satrústegui." },
-  { slug: "obra-nueva-25", titulo: "47", imagen: "/obras-nuevas/obra-nueva-25.jpg", tecnica: "Óleo", descripcion: "Obra antigua de Borja Satrústegui." },
-  { slug: "obra-nueva-26", titulo: "48", imagen: "/obras-nuevas/obra-nueva-26.jpg", tecnica: "Óleo", descripcion: "Obra antigua de Borja Satrústegui." },
-  { slug: "obra-nueva-27", titulo: "49", imagen: "/obras-nuevas/obra-nueva-27.jpg", tecnica: "Óleo", descripcion: "Obra antigua de Borja Satrústegui." },
-  { slug: "obra-nueva-28", titulo: "50", imagen: "/obras-nuevas/obra-nueva-28.jpg", tecnica: "Óleo", descripcion: "Obra antigua de Borja Satrústegui." },
-  { slug: "obra-nueva-29", titulo: "51", imagen: "/obras-nuevas/obra-nueva-29.jpg", tecnica: "Óleo", descripcion: "Obra antigua de Borja Satrústegui." },
 ];
 
 export default function ObrasSigloXX() {

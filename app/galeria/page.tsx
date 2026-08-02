@@ -33,6 +33,12 @@ const obras = [
   { slug: "primavera", titulo: "XXV", imagen: "/obras/primavera.jpg",  tecnica: "Óleo sobre tabla",   descripcion: "Madres e hijos desnudos en un campo verde bajo cielo azul. La vida que florece sin permiso ni pudor." },
   { slug: "pandemia",  titulo: "XXVI",imagen: "/obras/coleccion-particular.jpg", tecnica: "Óleo sobre tabla", descripcion: "Colección particular. Obra que refleja la crisis sanitaria global desde la mirada única de Satrústegui." },
   { slug: "jubilo",    titulo: "XXVII",imagen: "/obras/jubilo.jpg",     tecnica: "Óleo sobre lienzo",  descripcion: "Una multitud de figuras desnudas alza los brazos bajo un cielo estrellado. Éxtasis colectivo de la humanidad congregada entre haces de luz." },
+  { slug: "equilibrista",titulo: "XXVIII",imagen: "/obras-nuevas/obra-nueva-24.jpg", tecnica: "Óleo sobre lienzo",  descripcion: "Una figura desnuda hace el pino ante las fachadas de un pueblo, rodeada de espectadores. El cuerpo como asombro cotidiano." },
+  { slug: "reflejo-danza",titulo: "XXIX",imagen: "/obras-nuevas/obra-nueva-26.jpg", tecnica: "Óleo sobre tabla",   descripcion: "Desnudos que danzan y tocan música se reflejan invertidos en el agua. Fiesta báquica y su eco especular." },
+  { slug: "plumas",    titulo: "XXX", imagen: "/obras-nuevas/obra-nueva-27.jpg", tecnica: "Óleo sobre tabla",   descripcion: "Multitud de figuras de blanco, algunas tocadas con penachos de plumas de colores. Lo colectivo y lo festivo entre compartimentos." },
+  { slug: "clistenes", titulo: "XXXI",imagen: "/obras-nuevas/obra-nueva-28.jpg", tecnica: "Óleo sobre tabla",   descripcion: "Dos mujeres tienden las manos hacia el busto de Clístenes, padre de la democracia ateniense. Homenaje al origen del poder compartido." },
+  { slug: "mascarillas",titulo: "XXXII",imagen: "/obras-nuevas/obra-nueva-29.jpg", tecnica: "Óleo sobre lienzo",  descripcion: "Dos rostros con mascarilla y un bebé entre margaritas. La pandemia mirada desde la ternura y la naturaleza." },
+  { slug: "eden",      titulo: "XXXIII",imagen: "/obras/eden.jpg",      tecnica: "Óleo sobre lienzo",  descripcion: "Adán y Eva desnudos flanquean un arco de cielo azul sobre una multitud de rostros. El mito del origen ante la muchedumbre." },
 ];
 
 export default function Galeria() {
