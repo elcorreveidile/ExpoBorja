@@ -18,7 +18,6 @@ const originales = [
   { id: "multitud",  titulo: "La Multitud",                 imagen: "/obras/multitud.jpg",  tecnica: "Óleo sobre tabla",   descripcion: "Muchedumbre densa ante la muerte. Gran densidad emocional." },
   { id: "encuentro", titulo: "El Encuentro",                imagen: "/obras/encuentro.jpg", tecnica: "Óleo sobre tabla",   descripcion: "Dos rostros en tensión expresionista. Trazo libre y colores intensos." },
   { id: "flores",    titulo: "Adelfas",                     imagen: "/obras/flores.jpg",    tecnica: "Óleo sobre lienzo",  descripcion: "Flores amarillas sobre azul violeta. Belleza sin otra pretensión que ser." },
-  { id: "alhambra",  titulo: "Conversación en el Albayzín", imagen: "/obras/alhambra.jpg",  tecnica: "Óleo sobre tabla",   descripcion: "Figuras moriscas con la Alhambra como testigo eterno." },
   { id: "panadero",  titulo: "El Panadero",                 imagen: "/obras/panadero.jpg",  tecnica: "Óleo sobre lienzo",  descripcion: "La dignidad del trabajo cotidiano en una cocina de suelo a cuadros." },
   { id: "madre",     titulo: "La Madre",                    imagen: "/obras/madre.jpg",     tecnica: "Pastel sobre papel", descripcion: "Dos figuras sostienen un bebé entre campos dorados. Fuerza primitiva." },
   { id: "procesion", titulo: "La Procesión",                imagen: "/obras/procesion.jpg", tecnica: "Óleo sobre tabla",   descripcion: "Composición metapictórica: un cuadro dentro del cuadro." },
