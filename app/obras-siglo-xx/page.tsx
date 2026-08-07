@@ -40,7 +40,6 @@ const obras = [
   { slug: "obra-nueva-11", titulo: "33", imagen: "/obras-nuevas/obra-nueva-11.jpg", tecnica: "Óleo", descripcion: "Obra antigua de Borja Satrústegui." },
   { slug: "obra-nueva-12", titulo: "34", imagen: "/obras-nuevas/obra-nueva-12.jpg", tecnica: "Óleo", descripcion: "Obra antigua de Borja Satrústegui." },
   { slug: "obra-nueva-13", titulo: "35", imagen: "/obras-nuevas/obra-nueva-13.jpg", tecnica: "Óleo", descripcion: "Obra antigua de Borja Satrústegui." },
-  { slug: "obra-nueva-16", titulo: "38", imagen: "/obras-nuevas/obra-nueva-16.jpg", tecnica: "Óleo", descripcion: "Obra antigua de Borja Satrústegui." },
   { slug: "obra-nueva-17", titulo: "39", imagen: "/obras-nuevas/obra-nueva-17.jpg", tecnica: "Óleo", descripcion: "Obra antigua de Borja Satrústegui." },
   { slug: "obra-nueva-18", titulo: "40", imagen: "/obras-nuevas/obra-nueva-18.jpg", tecnica: "Óleo", descripcion: "Obra antigua de Borja Satrústegui." },
   { slug: "obra-nueva-19", titulo: "41", imagen: "/obras-nuevas/obra-nueva-19.jpg", tecnica: "Óleo", descripcion: "Obra antigua de Borja Satrústegui." },
