@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AdminProvider from "@/components/AdminProvider";
 import BarraEdicion from "@/components/BarraEdicion";
+import BotonSubir from "@/components/BotonSubir";
 
 const display = Fraunces({
   subsets: ["latin"],
@@ -48,6 +49,7 @@ export default function RootLayout({
           <Navigation />
           <main className="flex-1">{children}</main>
           <Footer />
+          <BotonSubir />
           <BarraEdicion />
         </AdminProvider>
       </body>

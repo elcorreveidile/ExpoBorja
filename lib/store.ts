@@ -23,6 +23,16 @@ export interface NuevaObra {
   creada: string;
 }
 
+export interface Verificacion {
+  token: string;
+  codigo: string;
+  nombre: string;
+  email: string;
+  mensaje: string;
+  referencia: string | null;
+  expira: string; // fecha ISO
+}
+
 // --- Conexión Neon (solo si hay URL) ---
 const URL_DB = process.env.DATABASE_URL || process.env.POSTGRES_URL || "";
 const sql = URL_DB ? neon(URL_DB) : null;
@@ -39,6 +49,11 @@ function preparar(): Promise<void> {
         slug text PRIMARY KEY, referencia text NOT NULL, epoca text NOT NULL,
         disponible boolean NOT NULL DEFAULT false, imagen text NOT NULL,
         creada timestamptz DEFAULT now()
+      )`;
+      await sql`CREATE TABLE IF NOT EXISTS verificaciones (
+        token text PRIMARY KEY, codigo text NOT NULL, nombre text NOT NULL,
+        email text NOT NULL, mensaje text NOT NULL, referencia text,
+        expira timestamptz NOT NULL, creada timestamptz DEFAULT now()
       )`;
     })();
   }
@@ -132,4 +147,38 @@ export async function anadirNueva(obra: NuevaObra): Promise<void> {
   await preparar();
   await sql`INSERT INTO obras_nuevas (slug, referencia, epoca, disponible, imagen)
     VALUES (${obra.slug}, ${obra.referencia}, ${obra.epoca}, ${obra.disponible}, ${obra.imagen})`;
+}
+
+// --- Verificaciones del formulario (código por email). En local, en memoria. ---
+const memVerif = new Map<string, Verificacion>();
+
+export async function crearVerificacion(v: Verificacion): Promise<void> {
+  if (!sql) {
+    memVerif.set(v.token, v);
+    return;
+  }
+  await preparar();
+  await sql`INSERT INTO verificaciones (token, codigo, nombre, email, mensaje, referencia, expira)
+    VALUES (${v.token}, ${v.codigo}, ${v.nombre}, ${v.email}, ${v.mensaje}, ${v.referencia}, ${v.expira})`;
+}
+
+export async function leerVerificacion(token: string): Promise<Verificacion | null> {
+  if (!sql) return memVerif.get(token) ?? null;
+  await preparar();
+  const [f] = (await sql`SELECT token, codigo, nombre, email, mensaje, referencia, expira
+    FROM verificaciones WHERE token=${token}`) as Array<{
+    token: string; codigo: string; nombre: string; email: string;
+    mensaje: string; referencia: string | null; expira: string;
+  }>;
+  if (!f) return null;
+  return { ...f, expira: String(f.expira) };
+}
+
+export async function borrarVerificacion(token: string): Promise<void> {
+  if (!sql) {
+    memVerif.delete(token);
+    return;
+  }
+  await preparar();
+  await sql`DELETE FROM verificaciones WHERE token=${token}`;
 }

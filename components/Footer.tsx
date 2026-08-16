@@ -49,9 +49,14 @@ export default function Footer() {
           <p className="text-sm text-tinta-tenue">
             © {new Date().getFullYear()} Borja Satrústegui. Todos los derechos reservados.
           </p>
-          <Link href="/contacto" className="text-sm tracking-[0.12em] uppercase text-tinta-suave hover:text-granate transition-colors">
-            Contacto
-          </Link>
+          <div className="flex items-center gap-5">
+            <Link href="/contacto" className="text-sm tracking-[0.12em] uppercase text-tinta-suave hover:text-granate transition-colors">
+              Contacto
+            </Link>
+            <Link href="/admin" className="text-sm tracking-[0.12em] uppercase text-tinta-tenue hover:text-granate transition-colors">
+              Acceso
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

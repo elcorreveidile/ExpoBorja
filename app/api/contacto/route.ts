@@ -1,71 +1,46 @@
 import { NextResponse } from "next/server";
+import crypto from "crypto";
+import { crearVerificacion } from "@/lib/store";
+import { enviarEmail } from "@/lib/email";
 
-// Destinatario: solo en el servidor, nunca llega al navegador.
-const DESTINO = process.env.CONTACTO_TO || "informa@blablaele.com";
-const BREVO_KEY = process.env.BREVO_API_KEY;
-const BREVO_SENDER = process.env.BREVO_SENDER || DESTINO;
+// Paso 1: valida el formulario, genera un código y lo envía por email al visitante.
+// El mensaje NO llega a Borja hasta que el visitante confirma el código (paso 2).
+const TTL_MIN = 15;
 
-// Envío por Brevo si hay clave; si no, FormSubmit (respaldo local).
-// Fase 4 añadirá Cloudflare Turnstile + rate limiting sobre esta misma interfaz.
 export async function POST(req: Request) {
   try {
     const { nombre, email, mensaje, referencia, empresa } = await req.json();
 
     // Honeypot: si viene relleno, es un bot. Fingimos éxito y descartamos.
-    if (empresa) return NextResponse.json({ ok: true });
+    if (empresa) return NextResponse.json({ ok: true, token: "descartado" });
 
     if (!nombre || !email || !mensaje) {
       return NextResponse.json({ ok: false, error: "Faltan campos" }, { status: 400 });
     }
-
-    const asunto = `Web Satrústegui — ${referencia ? `Consulta ${referencia}` : "Consulta"}`;
-    const cuerpo = [
-      `Nombre: ${nombre}`,
-      `Email: ${email}`,
-      referencia ? `Obra: ${referencia}` : null,
-      "",
-      mensaje,
-    ]
-      .filter((l) => l !== null)
-      .join("\n");
-
-    if (BREVO_KEY) {
-      const res = await fetch("https://api.brevo.com/v3/smtp/email", {
-        method: "POST",
-        headers: {
-          "api-key": BREVO_KEY,
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          sender: { email: BREVO_SENDER, name: "Web Borja Satrústegui" },
-          to: [{ email: DESTINO }],
-          replyTo: { email, name: nombre },
-          subject: asunto,
-          textContent: cuerpo,
-        }),
-      });
-      if (!res.ok) {
-        console.error("Brevo error:", res.status, await res.text().catch(() => ""));
-        return NextResponse.json({ ok: false, error: "No se pudo enviar" }, { status: 502 });
-      }
-      return NextResponse.json({ ok: true });
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      return NextResponse.json({ ok: false, error: "El email no es válido" }, { status: 400 });
     }
 
-    // Respaldo local (sin Brevo): FormSubmit.
-    const datos = new URLSearchParams({
-      nombre, email, mensaje,
-      ...(referencia ? { referencia } : {}),
-      _subject: asunto,
-      _captcha: "false",
+    const token = crypto.randomUUID();
+    const codigo = String(crypto.randomInt(0, 1_000_000)).padStart(6, "0");
+    const expira = new Date(Date.now() + TTL_MIN * 60_000).toISOString();
+
+    await crearVerificacion({ token, codigo, nombre, email, mensaje, referencia: referencia || null, expira });
+
+    const enviado = await enviarEmail({
+      to: email,
+      toName: nombre,
+      subject: "Tu código para contactar con Borja Satrústegui",
+      text: `Hola ${nombre},\n\nTu código de confirmación es: ${codigo}\n\nEscríbelo en la web para que tu mensaje se envíe. El código caduca en ${TTL_MIN} minutos.\n\nSi no has solicitado esto, ignora este correo.`,
     });
-    const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(DESTINO)}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded", Accept: "application/json" },
-      body: datos.toString(),
-    });
-    if (!res.ok) return NextResponse.json({ ok: false, error: "No se pudo enviar" }, { status: 502 });
-    return NextResponse.json({ ok: true });
+
+    if (!enviado && process.env.BREVO_API_KEY) {
+      return NextResponse.json({ ok: false, error: "No se pudo enviar el código" }, { status: 502 });
+    }
+
+    // En local (sin Brevo) devolvemos el código para poder probar el flujo.
+    const codigoDev = process.env.BREVO_API_KEY ? undefined : codigo;
+    return NextResponse.json({ ok: true, token, ...(codigoDev ? { codigoDev } : {}) });
   } catch {
     return NextResponse.json({ ok: false, error: "Error de servidor" }, { status: 500 });
   }
