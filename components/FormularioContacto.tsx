@@ -168,6 +168,16 @@ export default function FormularioContacto({ obraTitulo, referencia }: Props) {
         <textarea id="mensaje" required rows={6} value={form.mensaje} onChange={(e) => setForm({ ...form, mensaje: e.target.value })} className={`${campo} resize-none`} placeholder="¿En qué podemos ayudarte?" />
       </div>
 
+      <label className="flex items-start gap-2.5 text-sm text-tinta-suave cursor-pointer">
+        <input type="checkbox" required className="mt-1 w-4 h-4 shrink-0 accent-[#8f332a]" />
+        <span>
+          He leído y acepto la{" "}
+          <a href="/privacidad" target="_blank" rel="noopener noreferrer" className="text-granate hover:underline">
+            política de privacidad
+          </a>.
+        </span>
+      </label>
+
       {error && <p className="text-granate text-sm">{error}</p>}
 
       <button
@@ -179,7 +189,7 @@ export default function FormularioContacto({ obraTitulo, referencia }: Props) {
       </button>
 
       <p className="text-sm text-tinta-tenue text-center">
-        Para evitar spam, te enviaremos un código a tu email para confirmar. Tus datos no se comparten con terceros.
+        Para evitar spam, te enviaremos un código a tu email para confirmar.
       </p>
     </form>
   );

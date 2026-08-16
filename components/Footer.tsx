@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Por2DurosCredit from "./Por2DurosCredit";
 
 const navegacion = [
   { href: "/obra-nueva", label: "Obra nueva" },
@@ -45,18 +46,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-linea flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="mt-10 pt-6 border-t border-linea flex flex-col gap-4 items-center text-center sm:flex-row sm:justify-between sm:text-left">
           <p className="text-sm text-tinta-tenue">
             © {new Date().getFullYear()} Borja Satrústegui. Todos los derechos reservados.
           </p>
-          <div className="flex items-center gap-5">
-            <Link href="/contacto" className="text-sm tracking-[0.12em] uppercase text-tinta-suave hover:text-granate transition-colors">
-              Contacto
-            </Link>
-            <Link href="/admin" className="text-sm tracking-[0.12em] uppercase text-tinta-tenue hover:text-granate transition-colors">
-              Acceso
-            </Link>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm tracking-[0.1em] uppercase">
+            <Link href="/aviso-legal" className="text-tinta-suave hover:text-granate transition-colors">Aviso legal</Link>
+            <Link href="/privacidad" className="text-tinta-suave hover:text-granate transition-colors">Privacidad</Link>
+            <Link href="/admin" className="text-tinta-tenue hover:text-granate transition-colors">Acceso</Link>
           </div>
+        </div>
+
+        <div className="mt-5 pt-4 border-t border-linea/50 text-center text-xs">
+          <Por2DurosCredit />
         </div>
       </div>
     </footer>
