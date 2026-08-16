@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import crypto from "crypto";
 import { crearVerificacion } from "@/lib/store";
-import { enviarEmail } from "@/lib/email";
+import { enviarEmail, construirEmailCodigo } from "@/lib/email";
 
 // Paso 1: valida el formulario, genera un código y lo envía por email al visitante.
 // El mensaje NO llega a Borja hasta que el visitante confirma el código (paso 2).
@@ -27,12 +27,7 @@ export async function POST(req: Request) {
 
     await crearVerificacion({ token, codigo, nombre, email, mensaje, referencia: referencia || null, expira });
 
-    const enviado = await enviarEmail({
-      to: email,
-      toName: nombre,
-      subject: "Tu código para contactar con Borja Satrústegui",
-      text: `Hola ${nombre},\n\nTu código de confirmación es: ${codigo}\n\nEscríbelo en la web para que tu mensaje se envíe. El código caduca en ${TTL_MIN} minutos.\n\nSi no has solicitado esto, ignora este correo.`,
-    });
+    const enviado = await enviarEmail({ to: email, toName: nombre, ...construirEmailCodigo(nombre, codigo) });
 
     if (!enviado && process.env.BREVO_API_KEY) {
       return NextResponse.json({ ok: false, error: "No se pudo enviar el código" }, { status: 502 });

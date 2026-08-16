@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { leerVerificacion, borrarVerificacion } from "@/lib/store";
-import { enviarEmail } from "@/lib/email";
+import { enviarEmail, construirEmailConsulta } from "@/lib/email";
 
 // Paso 2: comprueba el código y, si es correcto, envía el mensaje a Borja.
 const DESTINO = process.env.CONTACTO_TO || "informa@blablaele.com";
@@ -24,21 +24,9 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: false, error: "El código no es correcto." }, { status: 400 });
     }
 
-    const asunto = `Web Satrústegui — ${v.referencia ? `Consulta ${v.referencia}` : "Consulta"}`;
-    const cuerpo = [
-      `Nombre: ${v.nombre}`,
-      `Email: ${v.email}`,
-      v.referencia ? `Obra: ${v.referencia}` : null,
-      "",
-      v.mensaje,
-    ]
-      .filter((l) => l !== null)
-      .join("\n");
-
     const enviado = await enviarEmail({
       to: DESTINO,
-      subject: asunto,
-      text: cuerpo,
+      ...construirEmailConsulta(v),
       replyTo: { email: v.email, name: v.nombre },
     });
 
