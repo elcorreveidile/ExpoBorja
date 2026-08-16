@@ -45,7 +45,8 @@ const nueva: ObraRaw[] = [
   { slug: "multitud", titulo: "La Multitud", epoca: "nueva", tecnica: "Óleo sobre tabla", anio: null, medidas: null, imagen: "/obras/multitud.jpg", disponible: false, publicada: true, destacada: false, descripcion: "Una muchedumbre densa ante la figura de la muerte. Lo cotidiano y lo existencial en un espacio expresionista." },
   { slug: "encuentro", titulo: "El Encuentro", epoca: "nueva", tecnica: "Óleo sobre tabla", anio: null, medidas: null, imagen: "/obras/encuentro.jpg", disponible: false, publicada: true, destacada: false, descripcion: "Dos rostros en tensión expresionista. Trazo libre y colores de gran intensidad." },
   { slug: "flores", titulo: "Adelfas", epoca: "nueva", tecnica: "Óleo sobre lienzo", anio: null, medidas: null, imagen: "/obras/flores.jpg", disponible: false, publicada: true, destacada: false, descripcion: "Flores amarillas sobre azul violeta. Rareza botánica en la obra de Satrústegui: belleza sin más pretensión." },
-  { slug: "alhambra", titulo: "Conversación en el Albayzín", epoca: "nueva", tecnica: "Óleo sobre tabla", anio: null, medidas: null, imagen: "/obras/alhambra.jpg", disponible: false, publicada: true, destacada: false, descripcion: "Dos figuras moriscas conversan frente a la Alhambra. Diálogo de culturas con el monumento nazarí como testigo." },
+  { slug: "jubilo", titulo: "Júbilo", epoca: "nueva", tecnica: "Óleo sobre lienzo", anio: null, medidas: null, imagen: "/obras/jubilo.jpg", disponible: false, publicada: true, destacada: false, descripcion: "Una multitud de figuras alza los brazos bajo un cielo estrellado. Éxtasis colectivo de la humanidad congregada entre haces de luz." },
+  { slug: "eden", titulo: "Edén", epoca: "nueva", tecnica: "Óleo sobre lienzo", anio: null, medidas: null, imagen: "/obras/eden.jpg", disponible: false, publicada: true, destacada: false, descripcion: "Adán y Eva flanquean un arco de cielo azul sobre una multitud de rostros. El mito del origen ante la muchedumbre." },
   { slug: "monjas", titulo: "Monjas", epoca: "nueva", tecnica: "Óleo sobre cartón", anio: null, medidas: null, imagen: "/obras/monjas.jpg", disponible: false, publicada: true, destacada: false, descripcion: "Religiosas y figuras desnudas habitan mundos paralelos separados por un umbral." },
   { slug: "espejo", titulo: "El Espejo", epoca: "nueva", tecnica: "Óleo sobre cartón", anio: null, medidas: null, imagen: "/obras/espejo.jpg", disponible: false, publicada: true, destacada: false, descripcion: "Una mujer de amarillo y su reflejo en un espacio surreal. La identidad y el doble en tonos verdes y ocres." },
   { slug: "calle", titulo: "Calle", epoca: "nueva", tecnica: "Óleo sobre cartón", anio: null, medidas: null, imagen: "/obras/calle.jpg", disponible: false, publicada: true, destacada: false, descripcion: "Dos figuras avanzan por una calle de tonos azules y cálidos. El tiempo detenido de la vida ordinaria." },
@@ -89,7 +90,7 @@ const momentos: ObraRaw[] = numerosMomentos.map((n) => ({
 }));
 
 // --- SALA: OBRA ANTIGUA · resto de piezas (pendientes de titular en el admin) ---
-const numerosAntigua = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29];
+const numerosAntigua = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 20, 21, 22, 23, 24, 26, 27, 28, 29];
 const antiguaExtra: ObraRaw[] = numerosAntigua.map((n) => ({
   slug: `obra-antigua-${n}`,
   titulo: "Sin título",
