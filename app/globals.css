@@ -1,14 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* ===========================================================================
+   Sistema de diseño — "Cal y granate"
+   Fondo de cal andaluza, tinta casi negra, acento granate. Pensado para
+   máxima legibilidad en móvil y para lectores mayores.
+   =========================================================================== */
+@theme {
+  /* Color */
+  --color-fondo: #eae4d7;        /* cal cálida, fondo general */
+  --color-superficie: #f3efe5;   /* tarjetas y bloques */
+  --color-hueso: #f7f3ea;        /* superficie más clara */
+  --color-tinta: #201a13;        /* texto principal, casi negro cálido */
+  --color-tinta-suave: #5f5443;  /* texto secundario */
+  --color-tinta-tenue: #877a65;  /* metadatos, pies */
+  --color-granate: #8f332a;      /* acento principal */
+  --color-granate-claro: #a83f36;/* hover del acento */
+  --color-granate-oscuro: #6f271f;
+  --color-ocre: #9c7434;         /* etiquetas, detalles */
+  --color-linea: #d8cfbc;        /* separadores y bordes */
+
+  /* Tipografía (las variables las inyecta next/font en el layout) */
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-mulish), system-ui, -apple-system, "Segoe UI", sans-serif;
+}
 
 :root {
-  --fondo: #0c0b09;
-  --carta: #1a150d;
-  --borde: #2e2416;
-  --oro: #c8962a;
+  color-scheme: light;
 }
 
 html {
@@ -16,32 +33,48 @@ html {
 }
 
 body {
-  background-color: #0c0b09;
-  color: #ede4d2;
-  font-family: 'Montserrat', sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-tinta);
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Playfair Display', Georgia, serif;
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+  text-wrap: balance;
 }
 
-.linea-oro {
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #c8962a, transparent);
-  margin: 1rem auto;
+/* Foco visible y accesible en toda la web */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-granate);
+  outline-offset: 2px;
 }
 
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0c0b09; }
-::-webkit-scrollbar-thumb { background: #2e2416; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #c8962a; }
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Filete decorativo reutilizable */
+.filete {
+  width: 64px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-granate), transparent);
 }
 
-.fade-in-up {
-  animation: fadeInUp 0.8s ease forwards;
+/* Barra de scroll discreta */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-fondo); }
+::-webkit-scrollbar-thumb { background: var(--color-linea); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-ocre); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -1,4 +1,32 @@
+# dependencias
 node_modules/
+
+# build de Next
 .next/
+out/
+*.tsbuildinfo
+
+# entorno
+.env
 .env.local
+.env*.local
+
+# vercel
 .vercel/
+
+# macOS / Finder
+.DS_Store
+**/.DS_Store
+
+# duplicados de sincronización (iCloud/Finder)
+* 2.*
+* 2
+
+# estado local del editor (en producción va a la base de datos)
+data/
+
+# fotos subidas en local (en producción van a Vercel Blob)
+public/subidas/
+
+# config local de Claude Code
+.claude/settings.local.json

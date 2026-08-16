@@ -1,17 +1,37 @@
 import type { Metadata } from "next";
+import { Fraunces, Mulish } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import AdminProvider from "@/components/AdminProvider";
+import BarraEdicion from "@/components/BarraEdicion";
+
+const display = Fraunces({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-fraunces",
+  style: ["normal", "italic"],
+});
+
+const sans = Mulish({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mulish",
+});
 
 export const metadata: Metadata = {
-  title: "Borja Satrústegui — Pintor",
+  metadataBase: new URL("https://borjasatrustegui.online"),
+  title: {
+    default: "Borja Satrústegui — Pintor",
+    template: "%s · Borja Satrústegui",
+  },
   description:
-    "Galería de pintura de Borja Satrústegui. Realismo social, expresionismo y costumbrismo urbano desde Granada. Obras originales y láminas disponibles.",
-  keywords: ["Borja Satrústegui", "pintura", "pintor", "Granada", "arte contemporáneo", "realismo social", "expresionismo"],
+    "Obra pictórica de Borja Satrústegui. Realismo social y expresionismo desde Granada. Dos salas —obra antigua y obra nueva— y consulta de obra disponible.",
+  keywords: ["Borja Satrústegui", "pintura", "pintor", "Granada", "realismo social", "expresionismo"],
   openGraph: {
     title: "Borja Satrústegui — Pintor",
-    description: "Realismo social, expresionismo y costumbrismo urbano desde Granada.",
-    url: "https://borjasatrustegui.com",
+    description: "Realismo social y expresionismo desde Granada.",
+    url: "https://borjasatrustegui.online",
     siteName: "Borja Satrústegui",
     locale: "es_ES",
     type: "website",
@@ -20,15 +40,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className="h-full">
-      <body className="min-h-full flex flex-col bg-[#0c0b09] text-[#ede4d2]">
-        <Navigation />
-        <main className="flex-1">{children}</main>
-        <Footer />
+    <html lang="es" className={`${display.variable} ${sans.variable} h-full`}>
+      <body className="min-h-full flex flex-col">
+        <AdminProvider>
+          <Navigation />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <BarraEdicion />
+        </AdminProvider>
       </body>
     </html>
   );
