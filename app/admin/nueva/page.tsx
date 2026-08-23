@@ -83,7 +83,6 @@ export default function NuevaObra() {
             id="foto"
             type="file"
             accept="image/*"
-            capture="environment"
             className="hidden"
             onChange={(e) => elegir(e.target.files?.[0])}
           />
